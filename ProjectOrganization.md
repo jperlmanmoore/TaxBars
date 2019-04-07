@@ -12,6 +12,8 @@ The site will allow people to increase and decrease funding in areas of their in
 The site will allow people to lock any Bar to keep it unaffected by other changes.
 --- In practice they could lock overall spending so reduction in 1 area increases in others
 
+The site will allow the user to create an account and push data to be averaged with all other user accounts.  
+The site will allow you to look at the current collected average modifications.
 
 
 ### Project Requirements
@@ -26,13 +28,11 @@ The site will allow people to lock any Bar to keep it unaffected by other change
 
 * Must have a polished frontend / UI
 
-* Must meet good quality coding standards (indentation, scoping, naming)
+* Must NOT use alerts, confirms, or prompts (look into modals!) 
 
-* Must NOT use alerts, confirms, or prompts (look into modals!)
+* Must have some sort of repeating element (table, columns, etc)   (Tax Bars)
 
-* Must have some sort of repeating element (table, columns, etc)
-
-* Must use Bootstrap or Alternative CSS Framework
+* Must use Bootstrap or Alternative CSS Framework (We will use Materialize CSS)
 
 * Must be Deployed (Github Pages)
 
@@ -44,7 +44,7 @@ The site will allow people to lock any Bar to keep it unaffected by other change
 
 * Mobile Responsive
 
-* Use an alternative CSS framework like Materialize
+* Use an alternative CSS framework like Materialize (https://materializecss.com/)
 
 #### At the end of the day on Thursday, 09-04-2019, you will have a short 1 page proposal listing out each of the following:
 
