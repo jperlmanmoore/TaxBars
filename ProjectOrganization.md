@@ -18,25 +18,25 @@ The site will allow people to lock any Bar to keep it unaffected by other change
 
 #### MUST HAVE:
 
-* Must use at least two APIs
+* Must use at least two APIs, BEA API (https://apps.bea.gov/API/bea_web_service_api_user_guide.htm) Google Gmail API (https://developers.google.com/apis-explorer/#p/gmail/v1/) Geocodio (https://www.geocod.io)  Taxee (https://taxee.io/)
 
-* Must use AJAX to pull data
+* Must use AJAX to pull data (https://apps.bea.gov/API/bea_web_service_api_user_guide.htm)
 
-* Must utilize at least one new library or technology that we haven’t discussed
+* Must utilize at least one new library or technology that we haven’t discussed ()
 
-* Must have a polished frontend / UI
+* Must have a polished frontend / UI (Materialize CSS)
 
-* Must meet good quality coding standards (indentation, scoping, naming)
+* Must meet good quality coding standards (Sure)
 
-* Must NOT use alerts, confirms, or prompts (look into modals!)
+* Must NOT use alerts, confirms, or prompts (Sure)
 
-* Must have some sort of repeating element (table, columns, etc)
+* Must have some sort of repeating element (Sure)
 
-* Must use Bootstrap or Alternative CSS Framework
+* Must use Bootstrap or Alternative CSS Framework (Materialize CSS)
 
-* Must be Deployed (Github Pages)
+* Must be Deployed (Github Pages) (Sure)
 
-* Must have User Input Validation
+* Must have User Input Validation (We'll find something.)
 
 #### NICE TO HAVE:
 
@@ -49,16 +49,35 @@ The site will allow people to lock any Bar to keep it unaffected by other change
 #### At the end of the day on Thursday, 09-04-2019, you will have a short 1 page proposal listing out each of the following:
 
 * Project Title
+## Budget-Income Comparison (TBD)
 
 * Team Members
+## Jennifer, Hilary, Jacob
 
 * Project Description
+## A webpage where a user can input their income/age/state(whatever demographics) and get a income comparison, and adjust monthly budget with a collection of slider bars. User comparison – in chart.
 
 * Sketch of Final Product
+## https://www.screencast.com/t/MyYQWqabE
 
 * APIs to be Used
 
 * Rough Breakdown of Tasks
+- Find a Set of Data we'd like to use from the included APIs
+- UI development
+-- General UI tag/class creation (Jacob)
+-- Slider Look and Feel (Hilary)
+-- Modals for user Input/Charts (Jennifer)
+-- Cards of information (Jacob)
+- Basic Javascript behaviors
+-- Data collection (Jacob)
+-- Reactions to Slider Changes (Jacob)
+-- Handle User Actions (TDB)
+-- Handle Input Validation (Hilary/Jennifer)
+- Firebase setup and testing
+-- Chart input pulled from Firebase (Jennifer)
+-- Organization of User Input (Jacob)
+-- Creation and management (Hilary)
 
 
 #### At the end of the day on Thursday, 09-04-2019, you will have a short 1 page proposal listing out each of the following:
