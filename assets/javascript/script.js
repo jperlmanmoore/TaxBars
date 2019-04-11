@@ -3,6 +3,13 @@
 
 // Remote Resources //
 
+//Jacob
+
+//Jennifer
+
+//Hilary
+
+
 // BEA 
 // User Guide: https://apps.bea.gov/api/_pdf/bea_web_service_api_user_guide.pdf
 // Query example: https://apps.bea.gov/api/data/?&UserID=41900668-00C1-4805-8EA7-643EE7CB9BE9&method=GETDATASETLIST&
