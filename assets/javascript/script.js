@@ -18,3 +18,8 @@ $.ajax({
 }).then(function (response) {
     console.log(response.BEAAPI.Results.Data);
 });
+
+$(document).ready(function() {
+    $('.collapsible').collapsible();
+    $('.datepicker').datepicker();
+})

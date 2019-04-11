@@ -9,19 +9,82 @@
 
     <!-- Materializ CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
     <form action="#">
-        <p class="range-field">
-            <input type="range" id="rangeId" min="0" max="100" />
-        </p>
+
+            <div class="row">
+                    <form class="col s12">
+                      <div class="row">
+                        <div class="input-field col s6">
+                          <input id="first_name" type="text" class="validate">
+                          <label for="first_name">First Name</label>
+                        </div>
+                        <div class="input-field col s6">
+                          <input id="last_name" type="text" class="validate">
+                          <label for="last_name">Last Name</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input id="password" type="password" class="validate">
+                          <label for="password">Password</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input id="email" type="email" class="validate">
+                          <label for="email">Email</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                            <div class="input-field col s12">
+                            <input id="birthday" type="text" class="datepicker">
+                            <label for="birthday">Birthday</label>
+                      </div>
+                    </form>
+                  </div>
+            
+                  
+        <ul class="collapsible">
+            <li>
+                <div id="title1" class="collapsible-header">First<i id="iconId1" class="material-icons iright">lock_open</i></div>
+                 <p class="range-field collapsible-body">
+                    <input type="range" id="rangeId1" min="0" max="100" />
+                    Description Area
+                </p>
+
+            </div>
+            </li>
+            <li>
+                    <div id="title2" class="collapsible-header">Second<i id="iconId2" class="material-icons iright">lock_open</i></div>
+                    <p class="range-field collapsible-body">
+                    <input type="range" id="rangeId2" min="0" max="100" />
+                    Description Area
+                </p>
+            </li>
+            <li>
+                    <div id="title3" class="collapsible-header">Third<i id="iconId3" class="material-icons iright">lock_open</i></div>
+                    <p class="range-field collapsible-body">
+                    <input type="range" id="rangeId3" min="0" max="100" />
+                    Description Area 
+                </p>
+            </li>
+        </ul>
     </form>
 
 
+
+    <!-- May be used for some extended behavior I'd like to add -->
+    <i class="material-icons">lock</i>
+    
+
     <!-- jQuery then react then material ui -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="assets/javascript/script.js"></script>
 </body>
