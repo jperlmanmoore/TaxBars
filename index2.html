@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Anton|Asap|Dosis|Hind|Montserrat|Quattrocento+Sans|Questrial|Quicksand|Raleway"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style2.css">
+</head>
+
+<body>
+
+    <!-- Navbar structure -->
+    <div class="navbar-fixed navbarheight">
+        <nav class="light-green darken-1">
+            <div class="navbarbkgrnd light-green darken-1 navbartext">
+                <h2 class="center black-text">Budget Bootcamp</h2>
+            </div>
+        </nav>
+    </div>
+
+    <br>
+    <br>
+
+    <div class=" headertext container text center">
+        <h4>compare your budget to</h4>
+        <h4>national median income household budget</h4>
+    </div>
+
+    <div class="container">
+
+        <div class="row">
+            <!-- * I like the cards better, butI did one row as colum and one row as cards. You guys can pick the difference and see what you like better. -->
+            <!-- sliders -->
+            <div class="col s12 m6">
+                <div class="card light-green lighten-4 text center">
+                    <div class="card-image">
+                        <img src="assets/images/money-2724241_1920.2.jpg">
+                        <span class="card-title center white-text">My Budget</span>
+                    </div>
+                    <br>
+                    <p>$345345</p>
+                    <br>
+                    <p>$345345345 Estimated fed income tax</p>
+                    <br>
+                    <p>sliders</p>
+                    <br>
+                    <p>sliders</p>
+                    <br>
+                    <p>sliders</p>
+                    <br>
+                    <p>sliders</p>
+                    <br>
+                    <p>sliders</p>
+
+                    <div class="card-action">
+                        <p>Total</p>
+                    </div>
+                </div>
+            </div>
+            <!-- space -->
+            <div class="col s1"></div>
+            <!-- compare -->
+            <div class="col s12 m6">
+                <div class="card light-green lighten-4 text">
+                    <div class="card-image">
+                        <img src="assets/images/money-2724241_1920.2.jpg">
+                        <span class="card-title center white-text">Fed & State Comparisons</span>
+                    </div>
+                    <div class="card-content"></div>
+                    <p class="center">Median Income for STATE</p>
+                    <p class="center">3452346</p>
+                    <br>
+                    <p class="center">Estimated Federal Taxes</p>
+                    <p class="center">342342</p>
+                    <br>
+                    <p class="center">National Median Income Budget</p>
+                    <p class="center"><a class="black-text"
+                            href="https://wallethacks.com/average-household-spending-budget/">$60060</a></p>
+                    <br>
+                    <!-- ***API DATA ON Median Income in that AREA -->
+                    <!-- ***BLS DATA ON MEDIAN HOUSEHOLD INCOME AND BUDGET*** -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <!-- Modal Structure -->
+        <a class="waves-effect waves-light light-green lighten-5 btn modal-trigger black-text" href="#modal1">Enter Your
+            income</a>
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <h4 class="dark-text">Enter your information</h4>
+                <!-- form structure -->
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="placeholder" id="first_name" type="text" class="validate" required>
+                                <label for="first_name">first name</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="placeholder" id="state" type="text" class="validate" required>
+                                <label for="something">address</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="placeholder" id="income" type="number" class="validate" required>
+                                <label for="income">annual income</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" id="submit" class="modal-close waves-effect waves-light btn-flat">Submit</a>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+
+    <div class="container">
+        <div class="row">
+            <!-- * I like the cards better, butI did one row as colum and one row as cards. You guys can pick the difference and see what you like better. -->
+            <div class="col s12 m6">
+                <div class="card light-green lighten-5">
+                    <div class="card-content black-text">
+                        <span class="card-title center">My Budget</span>
+                        <p>$234098034</p>
+                        <p>$3453453</p>
+                        <br>
+                        <!-- sliders go here -->
+                        <div id="test-slider center">
+                            Test slider
+                            <br>
+                            <p>sliders</p>
+                            <br>
+                            <p>sliders</p>
+                            <br>
+                            <p>sliders</p>
+                            <br>
+                        </div>
+                        <div class="card-action">
+                            <p>Total</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <!-- space -->
+                <div class="col s1"></div>
+                <!-- compare -->
+                <div class="col s12 m6">
+                    <div class="card">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">Natioanl Median Income<i
+                                    class="material-icons right">see this budget</i></span>
+                            <p><a href="https://wallethacks.com/average-household-spending-budget/"></a>Budget Article
+                            </p>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">Budget for Natioanl Household Medican
+                                Income<i class="material-icons right">close</i></span>
+                            <p>List that budget</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s12 m6">
+                    <div class="card-panel light-green lighten-4">
+                        <p class="text center">State Median Income</p>
+                        <p class="text center">$23452345</p>
+                        <!-- ***API DATA ON Median Income in that AREA -->
+                    </div>
+                </div>
+
+                <div class="col s12 m6">
+                    <div class="card-panel light-green lighten-3">
+                        <p class="text center">Federal Estimated Taxes</p>
+                        <p class="text center">$23452345</p>
+                        <!-- ***API DATA ON federal estimated income tax in that AREA -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Modal Structure -->
+        <a class="waves-effect waves-light light-green lighten-5 btn modal-trigger black-text" href="#modal1">Enter Your
+            income</a>
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <h4 class="dark-text">Enter your information</h4>
+                <!-- form structure -->
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="placeholder" id="first_name" type="text" class="validate">
+                                <label for="first_name">first name</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="placeholder" id="state" type="text" class="validate">
+                                <label for="something">address</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="placeholder" id="income" type="text" class="validate">
+                                <label for="income">annual income</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" id="submit" class="modal-close waves-effect waves-light btn-flat">Submit</a>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+
+
+    </div>
+
+
+
+    <br>
+
+
+    <!-- table structure -->
+    <!-- you add new colums by adding <th> tag -->
+    <!-- maybe we can put the user budget and comparison in side by side tables and let the user print or email that -->
+    <div class="container">
+        <table class="highlight centered responsive">
+            <h2 class="text center">comparison of recent user data</h2>
+            <thead>
+                <tr>
+                    <th class="text">Name</th>
+                    <th class="text">State</th>
+                    <th class="text">My Income</th>
+                    <th class="text">My Estimated Fed Income Tax</th>
+                    <th class="text">Federal Median Income</th>
+                    <th class="text">State Median Income</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td class="text">Alvin</td>
+                    <td class="text">Eclair</td>
+                    <td class="text">$0.87</td>
+                    <td class="text">$.10</td>
+                    <td class="text">$.10</td>
+                    <td class="text">$.10</td>
+                </tr>
+                <tr>
+                    <td class="text">Alvin</td>
+                    <td class="text">Eclair</td>
+                    <td class="text">$0.87</td>
+                    <td class="text">$.10</td>
+                    <td class="text">$.10</td>
+                    <td class="text">$.10</td>
+                </tr>
+                <tr>
+                    <td class="text">Alvin</td>
+                    <td class="text">Eclair</td>
+                    <td class="text">$0.87</td>
+                    <td class="text">$.10</td>
+                    <td class="text">$.10</td>
+                    <td class="text">$.10</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <br>
+
+    <footer class="page-footer light-green lighten-4">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="black-text">Budget Bootcamp</h5>
+                    <p class="black-text text-lighten-4">Budget established in 2019, in Atlanta, GA and founded by
+                        amazing
+                        students in the GA Tech coding Bootcamp. </p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="black-text">Some links here</h5>
+                    <ul>
+                        <li><a class="black-text" href="#!">Link 1</a></li>
+                        <li><a class="black-text" href="#!">Link 2</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container center">
+                © 2019 Bootcamp Project1 Team1
+            </div>
+        </div>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+    <script src="assets/javascript/project1.js"></script>
+
+</body>
+
+</html>
