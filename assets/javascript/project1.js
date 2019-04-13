@@ -49,13 +49,29 @@ $(function () {
     //   say no letters
     // };
 
-    
-
-    
-
     writeUserData(user);
 
   }); //end submit on click
+
+
+  //slider
+  var slider2 = document.getElementById("#slider2");
+  var val = document.getElementById("value");
+  val.innerHTML = slider2.value;
+  slider2.oninput = function() {
+      val.innerHTML=this.value;
+  };
+  
+  //source = https://wallethacks.com/average-household-spending-budget/
+  function populateTable(income){
+      const food = 12.87;
+      const housing = 33.12;
+      const transportation = 15.94;
+      const healthcare = 8.20;
+      const entertainment = 5.33;
+  };
+
+
 
   function writeUserData(user) {
     database.ref('users/' + user.firstName).set(  //user.firstname on this line is an ID for the data
@@ -70,4 +86,6 @@ $(function () {
     $('.modal').modal();
   });
 
-}); //end document
+}); 
+
+//end document

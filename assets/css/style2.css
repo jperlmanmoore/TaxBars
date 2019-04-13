@@ -44,3 +44,26 @@ main {
 .navbarheight, .navbarbkgrnd {
     height: 150px !important; 
 } 
+
+/* slider */
+/* #value{
+    color: red;
+    font-size: 15px;
+    transform: rotate(135deg);
+    position: relative;
+    top: -40px;
+} */
+
+#slidercontainer{
+    position:relative !important;
+}
+
+#slider2{
+    height: 15px;
+    top: 50px;
+}
+
+.thumb{
+    top:10px !important;
+}
+/* end slider */
