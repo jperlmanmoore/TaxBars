@@ -41,34 +41,11 @@ $(function () {
 
   }); //end submit on click
 
-
   function writeUserData(user) {
     database.ref('users/' + user.firstName).set(  //user.firstname on this line is an ID for the data
       user
     );
   }; //end write user data
-
-  var slider = document.getElementById('test-slider');
-  noUiSlider.create(slider, {
-      start: [20, 80],
-      connect: true,
-      step: 1,
-      pips: {
-          mode: 'steps',
-          stepped: true,
-          density: 4
-      },
-     direction: 'rtl',
-      orientation: 'horizontal', // 'horizontal' or 'vertical'
-      range: {
-          'min': 0,
-          'max': 100
-      },
-      format: wNumb({
-          decimals: 0
-      })
-  });
-
 
   //initialize form
   $(document).ready(function () {
