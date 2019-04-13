@@ -35,10 +35,16 @@
 #slidercontainer{
     position:relative !important;
     line-height: 20px;
+    max-height: 20px;
 }
 
 #slider2{
-    line-height: 20px;
+    height: 15px;
+    top: 50px;
+}
+
+.thumb{
+    top:10px !important;
 }
 
 
