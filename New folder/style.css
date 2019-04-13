@@ -1,0 +1,46 @@
+body {
+    background-color: rgb(241, 239, 239);
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.navbartext {
+    font-family: 'Montserrat', sans-serif;
+    /* font-family: 'Raleway', sans-serif; */
+    /* font-family: 'Quicksand', sans-serif; */
+    /* font-family: 'Dosis', sans-serif; */
+    /* font-family: 'Hind', sans-serif; */
+    /* font-family: 'Asap', sans-serif; */
+    /* font-family: 'Questrial', sans-serif; */
+    /* font-family: 'Quattrocento Sans', sans-serif; */
+    font-weight: bolder;
+    }
+
+.text {
+     /* font-family: 'Montserrat', sans-serif; */
+    /* font-family: 'Raleway', sans-serif; */
+    font-family: 'Quicksand', sans-serif;
+    /* font-family: 'Dosis', sans-serif; */
+    /* font-family: 'Hind', sans-serif; */
+    /* font-family: 'Asap', sans-serif; */
+    /* font-family: 'Questrial', sans-serif; */
+    /* font-family: 'Quattrocento Sans', sans-serif; */
+    font-weight: bold;
+    }
+
+.headertext {
+    margin-bottom: 20px;
+}
+
+h4 {
+    line-height: 20px;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.navbarheight, .navbarbkgrnd {
+    height: 100px !important; 
+} 
