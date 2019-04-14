@@ -55,6 +55,7 @@ function getFedTaxes(income, filingType = "single") {
     return taxesOwed;
 }
 
+
 function fetchTaxeeData() {
     $.ajax({
         url: 'https://taxee.io/api/v2/federal/2019',
