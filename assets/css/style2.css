@@ -1,13 +1,13 @@
 body {
-    background-color: rgb(241, 239, 239);
+    background-color: rgb(224, 221, 221);
     display: flex;
     min-height: 100vh;
     flex-direction: column;
 }
 
 .navbartext {
-    font-family: 'Montserrat', sans-serif;
-    /* font-family: 'Raleway', sans-serif; */
+    /* font-family: 'Montserrat', sans-serif; */
+    font-family: 'Raleway', sans-serif;
     /* font-family: 'Quicksand', sans-serif; */
     /* font-family: 'Dosis', sans-serif; */
     /* font-family: 'Hind', sans-serif; */
@@ -18,23 +18,21 @@ body {
     }
 
 .text {
-     /* font-family: 'Montserrat', sans-serif; */
+     font-family: 'Montserrat', sans-serif !important;
     /* font-family: 'Raleway', sans-serif; */
-    font-family: 'Quicksand', sans-serif;
+    /* font-family: 'Quicksand', sans-serif; */
     /* font-family: 'Dosis', sans-serif; */
     /* font-family: 'Hind', sans-serif; */
     /* font-family: 'Asap', sans-serif; */
     /* font-family: 'Questrial', sans-serif; */
     /* font-family: 'Quattrocento Sans', sans-serif; */
-    font-weight: bold;
+    /* font-weight: bolder; */
     }
 
-.headertext {
-    margin-bottom: 20px;
-}
-
-h4 {
-    line-height: 10px;
+.modalmargin {
+    margin-bottom: 15px;
+    margin-top: 5px;
+    /* I would like this item to be centered if possible */
 }
 
 main {
@@ -42,10 +40,10 @@ main {
 }
 
 .navbarheight, .navbarbkgrnd {
-    height: 150px !important; 
+    height: 100px !important; 
 } 
 
-/* slider */
+/* slider Hilary, was this something we need? Not sure...*/
 /* #value{
     color: red;
     font-size: 15px;
@@ -67,3 +65,16 @@ main {
     top:10px !important;
 }
 /* end slider */
+
+#sliderlabel {
+    margin-top: 50px;
+}
+
+i {
+  font-size: 16px; 
+  margin-top: 5px; 
+}
+
+.cardtext {
+    font-size: 24px;
+}

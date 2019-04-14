@@ -55,12 +55,12 @@ $(function () {
 
 
   //slider
-  var slider2 = document.getElementById("#slider2");
-  var val = document.getElementById("value");
-  val.innerHTML = slider2.value;
-  slider2.oninput = function() {
-      val.innerHTML=this.value;
-  };
+  // var slider2 = document.getElementById("#slider2");
+  // var val = document.getElementById("value");
+  // val.innerHTML = slider2.value;
+  // slider2.oninput = function() {
+  //     val.innerHTML=this.value;
+  // };
   
   //source = https://wallethacks.com/average-household-spending-budget/
   function populateTable(income){
