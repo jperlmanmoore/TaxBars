@@ -151,7 +151,7 @@ var config = {
     );
   }; //end write user data
 
-  //initialize form
+  //document ready functions
   $(document).ready(function () {
     M.updateTextFields();
     $('.modal').modal();
