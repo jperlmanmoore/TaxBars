@@ -63,26 +63,6 @@ function fetchTaxeeData() {
     });
 }
 
-// BEA 
-// User Guide: https://apps.bea.gov/api/_pdf/bea_web_service_api_user_guide.pdf
-// Query example: https://apps.bea.gov/api/data/?&UserID=41900668-00C1-4805-8EA7-643EE7CB9BE9&method=GETDATASETLIST&
-// API Key: 41900668-00C1-4805-8EA7-643EE7CB9BE9
-// National Data, National Income and Product Accounts, = Table 3.16. Government Current Expenditures by Function
-// https://apps.bea.gov/api/data/?&UserID=41900668-00C1-4805-8EA7-643EE7CB9BE9&method=getdata&frequency=a&year=2017&tablename=t31600&datasetname=nipa
-// The above call requires a Year, a frequency (Annual, Monthly, Quartly), the table name, the data set, the method, and our apikey.
-// response.BEAAPI.Results.Data
-// TODO - Determine how to see what is a subcategory of what.
-function logBEA() {
-    $.ajax({
-        url: `https://apps.bea.gov/api/data/?&UserID=41900668-00C1-4805-8EA7-643EE7CB9BE9&method=getdata&frequency=a&year=2017&tablename=t31600&datasetname=nipa`,
-        method: "GET"
-    }).then(function (response) {
-        debugger;
-        console.log(response.BEAAPI.Results.Data);
-    });
-}
-
-
 // firebase
 var config = {
     apiKey: "AIzaSyA_OTRPTqH6qlBHv6DgxXyZZROR5TYIQoc",
@@ -98,9 +78,29 @@ var config = {
 
   let user = {};
 
-  $("#submit").on("click", function (e) {
+// empty modal  
+  
+
+
+
+$("#submit").on("click", function (e) {
+
+  e.preventDefault();
+
+
+
+});
+
+
+
+//submit data to firebase when click submit, but not if field is empty & clear text-input fields
+  $("#signup").on("click", function (e) {
 
     e.preventDefault();
+
+
+
+
 
     //const firstName  = $("#first_name").val().trim();
     let tmp = $("#first_name").val().trim();
@@ -123,8 +123,17 @@ var config = {
 
     writeUserData(user);
 
+    $("input").val("");
+
   }); //end submit on click
 
+  function writeUserData(user) {
+    database.ref('users/' + user.firstName).set(  //user.firstname on this line is an ID for the data
+      user
+    );
+  }; //end write user data
+
+// need to clear modal data after use
 
   //slider
   // var slider2 = document.getElementById("#slider2");
@@ -143,20 +152,10 @@ var config = {
       const entertainment = 5.33;
   };
 
-
-
-  function writeUserData(user) {
-    database.ref('users/' + user.firstName).set(  //user.firstname on this line is an ID for the data
-      user
-    );
-  }; //end write user data
-
   //document ready functions
-  $(document).ready(function () {
     M.updateTextFields();
     $('.modal').modal();
     fetchTaxeeData();
     fetchGeorgiaMedianIncome();
-  });
 
 }); //end document

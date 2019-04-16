@@ -18,19 +18,25 @@
 
 <body>
     <!-- Navbar structure -->
-    <div class="navbar-fixed navbarheight">
-        <nav class="light-green lighten-1">
-            <div class="navbarbkgrnd light-green lighten-1 navbartext">
-                <h2 class="center black-text">Budget Bootcamp</h2>
-            </div>
-        </nav>
-    </div>
 
-    <br>
-    <br>
+    <nav class="light-green lighten-3 navbarheight navbarbkgrnd vertica">
+        <div class="nav-wrapper">
+                <h3 class="navbrand-logo brown-text text-darken-2 navbartext">Budget Bootcamp</h3>
+                <h5></h5>
+                <ul class="right hide-on-med-and-down">
+                    <li id="navbarbtn" class="btn btn-flat light-green lighten-3 text brown-text right">Contact</li>
+                    <li id="navbarbtn" class="btn btn-flat light-green lighten-3 text brown-text right">About US</li>
+                    <li id="navbarbtn" class="btn btn-flat light-green lighten-3 text brown-text right">Login</li>
+                    <li id="navbarbtn signup" class="btn btn-flat light-green lighten-3 text brown-text right">Signup</li>
+                </ul>
+        </div>
+    </nav>
 
-    <div class="headertext container text center">
-        <h4 class="grey-text lighten-1">Compare your budget with the federal median income budget.</h4>
+
+    <div class="container s12 m8">
+        <div class="headertext container text center">
+            <h4 class="brown-text text-darken-2">Compare your budget with the federal median income budget.</h4>
+        </div>
     </div>
 
     <div class="container">
@@ -46,48 +52,20 @@
                             <h3 class="textcardtitle">My Budget</h3>
                         </span>
                     </div>
-                    <p class="text">initial budget based on federal median income</p>
+                    <p class="text brown-text text-darken-2">initial budget based on federal median income</p>
                     <br>
-                    <p>$345345</p>
-                    <p>$345345345 Estimated fed income tax</p>
+                    <p class="text brown-text text-darken-2">$345345</p>
+                    <p class="text brown-text text-darken-2">$345345345 Estimated fed income tax</p>
                     <div class="container" id="slidercontainer">
                         <form>
                             <div id="value"></div>
                             <input type="range" value="" class="slider" id="slider2" min="0" max="200" name="weight" />
                         </form>
                     </div>
-
-                    <p id="sliderlabel">Placeholder</p> <!-- Hilary, please edit this label to whatever you want. -->
-
-                    <div class="container" id="slidercontainer">
-                        <form>
-                            <div id="value"></div>
-                            <input type="range" value=100 class="slider" id="slider2" min="0" max="200" name="weight" />
-                        </form>
-                    </div>
-
-                    <p id="sliderlabel">Placeholder</p> <!-- Hilary, please edit this label to whatever you want. -->
-
-                    <div class="container" id="slidercontainer">
-                        <form>
-                            <div id="value"></div>
-                            <input type="range" value="" class="slider" id="slider2" min="0" max="200" name="weight" />
-                        </form>
-                    </div>
-
-                    <p id=sliderlabel>Placeholder</p> <!-- Hilary, please edit this label to whatever you want. -->
-
-                    <div class="container" id="slidercontainer">
-                        <form>
-                            <div id="value"></div>
-                            <input type="range" value="" class="slider" id="slider2" min="0" max="200" name="weight" />
-                        </form>
-                    </div>
-
-                    <p id="sliderlabel">Placeholder</p> <!-- Hilary, please edit this label to whatever you want. -->
-
+                    <p id="sliderlabel text brown-text text-darken-2">Placeholder</p>
+                    <!-- Hilary, please edit this label to whatever you want. -->
                     <div class="card-action">
-                        <p>Total</p>
+                        <p class="text brown-text text-darken-2">Total</p>
                     </div>
                 </div>
             </div>
@@ -96,69 +74,72 @@
             <div class="col s1"></div>
 
             <!-- modal -->
-            <!-- would like to change the font on the modal -->
-            <div class="col s12 m6">
-                <div class="modalmargin">
-                    <a class="waves-effect waves-light white btn light-green lighten-3 modal-trigger black-text text"
-                        href="#modal1"> enter your information & compare </a>
-                    <div id="modal1" class="modal">
-                        <div class="modal-content">
-                            <h4 class="dark-text text">Something</h4>
-                            <!-- form structure -->
-                            <div class="row">
-                                <form class="col s12">
-                                    <div class="row">
-                                        <div class="input-field col s12 m6">
-                                            <input placeholder="enter any name your want" id="first_name" type="text"
-                                                class="validate" required>
-                                            <label for="name text" class="text">first name</label>
+            <div class="containter">
+                <div class="col s12 m6">
+                    <div class="modalmargin center-align">
+                        <a class="waves-effect waves-light white btn light-green lighten-3 modal-trigger text brown-text text-darken-2 text"
+                            href="#modal1"> enter your information </a>
+                        <div id="modal1" class="modal">
+                            <div class="modal-content">
+                                <h4 class="text brown-text text-darken-2 text">Something</h4>
+                                <!-- form structure -->
+                                <div class="row">
+                                    <form id="modalForm" class="col s12">
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input placeholder="enter any name your want" id="first_name"
+                                                    type="text" class="validate text brown-text text-darken-2" required>
+                                                <label for="name" class="text brown-text text-darken-2">first
+                                                    name</label>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <input placeholder="your dream GA address" id="state" type="text"
-                                                class="validate" required>
-                                            <label for="address text">address</label>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input placeholder="your dream GA address" id="state" type="text"
+                                                    class="validate" required>
+                                                <label for="address"
+                                                    class="text brown-text text-darken-2">address</label>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <input placeholder="enter your dream income" id="income" type="number"
-                                                class="validate" required>
-                                            <label for="income text">annual income</label>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input placeholder="enter your dream income" id="income" type="number"
+                                                    class="validate" required>
+                                                <label for="income" class="text text brown-text text-darken-2">annual
+                                                    income</label>
+                                            </div>
                                         </div>
-                                    </div>
-                                </form>
+                                    </form>
+                                </div>
                             </div>
-                        </div>
-                        <div class="modal-footer">
-                            <a href="#!" id="submit"
-                                class="modal-close waves-effect waves-light btn-flat text">Submit</a>
+                            <div class="modal-footer">
+                                <a href="#!" id="submit"
+                                    class="modal-close waves-effect waves-light btn-flat text text brown-text text-darken-2">Submit</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
             <!-- Income and Tax Comparison Cards -->
             <div class="col s12 m6">
                 <div class="card light-green lighten-5">
                     <div class="card-image waves-effect waves-block waves-light">
-                        <!-- class="activator" -->
                     </div>
+                     <!-- class="activator" -->
                     <div class="card-content">
-                        <span class="text card-title activator grey-text text-darken-4 centered">Federal Median Income
-                            Budget
-                            <i class="material-icons right grey-text">see this budget</i></span>
-                        <a href="https://wallethacks.com/average-household-spending-budget/" class="grey-text">Budget
+                        <span class="text card-title activator text brown-text text-darken-2 left">Federal Median Income
+                            Budget</span>
+                        <i class="text brown-text text-darken-2">compare yours</i>
+                        <a href="https://wallethacks.com/average-household-spending-budget/"
+                            class="text brown-text text-darken-2">Budget
                             Article</a>
-                        </p>
                     </div>
                     <div class="card-reveal light-green lighten-5">
-                        <span class="card-title grey-text text-darken-4 ">
+                        <span class="card-title text brown-text text-darken-2">
                             <i class="material-icons right">close</i></span>
                         <div class="container">
                             <table class="striped centered responsive">
-                                <h5 class="text center">2017 Fed</h5>
+                                <h5 class="text center brown-text text-darken-2">Median Income Budget</h5>
                                 <thead>
                                     <tr>
                                         <th class="text">Expense</th>
@@ -188,16 +169,17 @@
 
             <div class="col s12 m6">
                 <div class="card-panel light-green lighten-4">
-                    <p class="text center cardtext">Georgia Median Income</p>
-                    <p class="text center cardtext">$23452345</p>
+                    <!-- <div class="card-panel light-green lighten-4"> -->
+                    <h5 class="text left text brown-text text-darken-2">Georgia Median Income</h5>
+                    <p class="text clearfix text brown-text text-darken-2">$23452345</p>
                     <!-- ***API DATA ON Median Income in that AREA -->
                 </div>
             </div>
 
             <div class="col s12 m6">
                 <div class="card-panel light-green lighten-3">
-                    <p class="text center cardtext">Your Estimated Federal Taxes</p>
-                    <p class="text center cardtext">$23452345</p>
+                    <h5 class="text left text brown-text text-darken-2">Your Estimated Federal Taxes</h5>
+                    <p class="text clearfix text brown-text text-darken-2">$23452345</p>
                     <!-- ***API DATA ON federal estimated income tax in that AREA -->
                 </div>
             </div>
@@ -206,10 +188,9 @@
 
     <!-- table structure -->
     <!-- you add new colums by adding <thead><tr><th>(each table head) tag -->
-    <!-- maybe we can put the user budget and comparison in side by side tables and let the user print or email that -->
     <div class="container">
-        <table class="striped centered responsive">
-            <h2 class="text center">comparison of recent user data</h2>
+        <table class="centered responsive">
+            <h3 class="text center text brown-text text-darken-2">comparison of recent users</h3>
             <thead>
                 <tr>
                     <th class="text">Name</th>
@@ -255,16 +236,17 @@
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
-                    <h5 class="black-text">Budget Bootcamp</h5>
-                    <p class="black-text text-lighten-4">Budget Bootcamp was established in 2019, in Atlanta, GA and founded by
+                    <h5 class="text brown-text text-darken-2">Budget Bootcamp</h5>
+                    <p class="text brown-text text-darken-2">Budget Bootcamp was established in 2019, in Atlanta, GA and
+                        founded by
                         amazing students in the GA Tech coding Bootcamp. </p>
                 </div>
                 <div class="col l4 offset-l2 s12">
-                    <h5 class="grey-text">More info</h5>
+                    <h5 class="text brown-text text-darken-2">More info</h5>
                     <ul>
-                        <li><a class="grey-text darken-2" href="https://www.consumer.gov/articles/1002-making-budget">How to
+                        <li><a class="text brown-text text-darken-2"
+                                href="https://www.consumer.gov/articles/1002-making-budget">How to
                                 Make a Budget</a></li>
-                        <li><a class="grey-text" href="#!">Link 2</a></li>
                     </ul>
                 </div>
             </div>
@@ -282,6 +264,11 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-database.js"></script> -->
+
+
     <script src="assets/javascript/project1.js"></script>
 
 </body>

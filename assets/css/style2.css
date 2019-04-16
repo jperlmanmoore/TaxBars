@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(224, 221, 221);
+    background-color: rgb(248, 245, 245);
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -14,11 +14,12 @@ body {
     /* font-family: 'Asap', sans-serif; */
     /* font-family: 'Questrial', sans-serif; */
     /* font-family: 'Quattrocento Sans', sans-serif; */
-    font-weight: bolder;
+    font-weight: 600;
+    margin-left: 50px;
     }
 
 .text {
-     font-family: 'Montserrat', sans-serif !important;
+     font-family: 'Montserrat', sans-serif;
     /* font-family: 'Raleway', sans-serif; */
     /* font-family: 'Quicksand', sans-serif; */
     /* font-family: 'Dosis', sans-serif; */
@@ -29,10 +30,13 @@ body {
     /* font-weight: bolder; */
     }
 
+.loginsignup {
+    margin: 5px;
+    margin-top: 50px;
+}
+
 .modalmargin {
     margin-bottom: 15px;
-    margin-top: 5px;
-    /* I would like this item to be centered if possible */
 }
 
 main {
@@ -40,8 +44,11 @@ main {
 }
 
 .navbarheight, .navbarbkgrnd {
-    height: 100px !important; 
+    height: 150px !important; 
 } 
+
+/*  */
+
 
 /* slider Hilary, was this something we need? Not sure...*/
 /* #value{
@@ -75,6 +82,6 @@ i {
   margin-top: 5px; 
 }
 
-.cardtext {
-    font-size: 24px;
+h4 {
+    margin-bottom: 25px;
 }
