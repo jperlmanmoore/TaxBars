@@ -37,6 +37,12 @@ body {
 
 .modalmargin {
     margin-bottom: 15px;
+<<<<<<< HEAD
+=======
+    margin-top: 5px;
+    /* I would like this item to be centered if possible */
+    /* HS - I got it centered by adding the class center-align to it*/
+>>>>>>> 18c6a8f9f6253048f29614e951c64ec21c8822d5
 }
 
 main {
@@ -47,6 +53,7 @@ main {
     height: 150px !important; 
 } 
 
+<<<<<<< HEAD
 /*  */
 
 
@@ -58,6 +65,8 @@ main {
     position: relative;
     top: -40px;
 } */
+=======
+>>>>>>> 18c6a8f9f6253048f29614e951c64ec21c8822d5
 
 #slidercontainer{
     position:relative !important;
@@ -74,7 +83,8 @@ main {
 /* end slider */
 
 #sliderlabel {
-    margin-top: 50px;
+    margin-top: 60px;
+    font-weight: bold;
 }
 
 i {
