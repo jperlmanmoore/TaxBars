@@ -57,12 +57,16 @@ main {
 .thumb{
     top:10px !important;
 }
-/* end slider */
+
+output {
+    display: inline;
+}
 
 #sliderlabel {
-    margin-top: 60px;
+    margin-top: 40px;
     font-weight: bold;
 }
+/* end slider */
 
 i {
   font-size: 16px; 
@@ -72,3 +76,5 @@ i {
 .cardtext {
     font-size: 24px;
 }
+
+

@@ -125,16 +125,11 @@ $(function () {
 
   }); //end submit on click
 
-  
-  // Remove tooltips:
-  // tooltipSlider.noUiSlider.removeTooltips();
-  //slider
-  // var slider2 = document.getElementById("#slider2");
-  // var val = document.getElementById("value");
-  // val.innerHTML = slider2.value;
-  // slider2.oninput = function() {
-  //     val.innerHTML=this.value;
-  // };
+  function sliderOutput() {
+    const val = $('#slider2').val();
+    $("#slider2output").html(val);
+  };
+
 
   //source = https://wallethacks.com/average-household-spending-budget/
   function populateTable(income) {
@@ -153,12 +148,62 @@ $(function () {
     );
   }; //end write user data
 
-  //document ready functions
-  $(document).ready(function () {
-    M.updateTextFields();
-    $('.modal').modal();
-    fetchTaxeeData();
-    fetchGeorgiaMedianIncome();
-  });
+ // HS -- to write the Firebase data to the end table. Tried two different ways but neither seem to do the trick.
+  //var database = firebase.database();
+  //database.ref().once('value', function(snapshot){
+    // database.ref().once('value', function(snapshot){
+    //       var content = '';
+    //       snapshot.forEach(function(data){
+    //           var val = data.val();
+    //           content +='<tr>';
+    //           content += '<td>' + user.firstName + '</td>';
+    //           content += '<td>' + user.income + '</td>';
+    //           content += '<td>' + user.state + '</td>';
+    //       });
+    //       $('#tableRow').append(content);
+    //     });
+  
 
-}); //end document
+  
+  database.ref().on("child_added", function(childSnapshot, prevChildKey) {
+
+    console.log(childSnapshot.val());
+    $("#table1").text(childSnapshot.val().firstName + " | " + childSnapshot.val().income + " | " + childSnapshot.val().state);
+  })
+  
+
+  //   function populateFBTable(data, key) {
+  //     var html = '';
+  //     html += '<tr>';
+  //     $.each(data, function (key, value) {
+  //       html += '<td>' + value + '</td>';
+  //     });
+  //     html += // HS - stuck on this part for Firebase table to populate
+  //       html += '</tr>';
+
+  //     $('#tableRow').append(html);
+  //   }
+  //  // end of the bottom table
+
+    //document ready functions
+    $(document).ready(function () {
+      M.updateTextFields();
+      $('.modal').modal();
+      fetchTaxeeData();
+      fetchGeorgiaMedianIncome();
+    });
+
+
+
+
+
+
+
+
+
+  }); //end document
+
+
+
+
+

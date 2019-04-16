@@ -51,13 +51,24 @@
                     <p>$345345</p>
                     <p>$345345345 Estimated fed income tax</p>
                     <div class="container" id="slidercontainer">
-                        <form>
+                        <!-- <form>
                             <div id="value"></div>
                             <input type="range" value="" class="slider" id="slider2" min="0" max="200" name="weight" />
-                        </form>
+                        </form> -->
+
+                        <div class="container" id="slidercontainer">
+                            <form>
+                                <div id="value"></div>
+                                <input type="range" value="200" step="1" class="slider" id="slider2" min="0" max="200"
+                                    name="weight" oninput="sliderOutput()" />
+                                <output id="slider2output">Test</output>
+                            </form>
+                        </div>
+
                     </div>
 
-                    <p id="sliderlabel">Food</p> 
+                    <p id="sliderlabel">Food</p>
+                    <!--Label is below the slider-->
 
                     <div class="container" id="slidercontainer">
                         <form>
@@ -66,7 +77,7 @@
                         </form>
                     </div>
 
-                    <p id="sliderlabel">Housing</p> 
+                    <p id="sliderlabel">Housing</p>
 
                     <div class="container" id="slidercontainer">
                         <form>
@@ -75,16 +86,7 @@
                         </form>
                     </div>
 
-                    <p id="sliderlabel">Transportation</p> 
-                    
-                    <div class="container" id="slidercontainer">
-                        <form>
-                            <div id="value"></div>
-                            <input type="range" value="" class="slider" id="slider2" min="0" max="200" name="weight" />
-                        </form>
-                    </div>
-
-                    <p id=sliderlabel>Healthcare</p> 
+                    <p id="sliderlabel">Transportation</p>
 
                     <div class="container" id="slidercontainer">
                         <form>
@@ -93,7 +95,16 @@
                         </form>
                     </div>
 
-                    <p id="sliderlabel">Entertainment</p> 
+                    <p id=sliderlabel>Healthcare</p>
+
+                    <div class="container" id="slidercontainer">
+                        <form>
+                            <div id="value"></div>
+                            <input type="range" value="" class="slider" id="slider2" min="0" max="200" name="weight" />
+                        </form>
+                    </div>
+
+                    <p id="sliderlabel">Entertainment</p>
 
                     <div class="card-action">
                         <p>Total</p>
@@ -217,9 +228,9 @@
     <!-- you add new colums by adding <thead><tr><th>(each table head) tag -->
     <!-- maybe we can put the user budget and comparison in side by side tables and let the user print or email that -->
     <div class="container">
-        <table class="striped centered responsive">
+        <table class="striped centered responsive" id="table1">
             <h2 class="text center">comparison of recent user data</h2>
-            <thead>
+            <thead id="tableHeader">
                 <tr>
                     <th class="text">Name</th>
                     <th class="text">State</th>
@@ -229,8 +240,10 @@
                 </tr>
             </thead>
 
+    
+
             <tbody>
-                <tr>
+                <tr id="tableRow">
                     <td class="text">Alvin</td>
                     <td class="text">Eclair</td>
                     <td class="text">$0.87</td>
@@ -265,13 +278,15 @@
             <div class="row">
                 <div class="col l6 s12">
                     <h5 class="black-text">Budget Bootcamp</h5>
-                    <p class="black-text text-lighten-4">Budget Bootcamp was established in 2019, in Atlanta, GA and founded by
+                    <p class="black-text text-lighten-4">Budget Bootcamp was established in 2019, in Atlanta, GA and
+                        founded by
                         amazing students in the GA Tech coding Bootcamp. </p>
                 </div>
                 <div class="col l4 offset-l2 s12">
                     <h5 class="grey-text">More info</h5>
                     <ul>
-                        <li><a class="grey-text darken-2" href="https://www.consumer.gov/articles/1002-making-budget">How to
+                        <li><a class="grey-text darken-2"
+                                href="https://www.consumer.gov/articles/1002-making-budget">How to
                                 Make a Budget</a></li>
                         <li><a class="grey-text" href="#!">Link 2</a></li>
                     </ul>
