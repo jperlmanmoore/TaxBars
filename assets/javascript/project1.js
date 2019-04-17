@@ -177,4 +177,5 @@ $(function () {
   $('.modal').modal();
   fetchTaxeeData();
   fetchGeorgiaMedianIncome();
+  $('.collapsible').collapsible();
 }); //end document
