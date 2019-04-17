@@ -1,26 +1,3 @@
-$(function () {
-
-  // Census
-  // apKey: 5431a0d93dfd0097df1f5e372a56adc1513cfd5b
-  // Geography level will be us (&for=us:1) or Georgia state (&for=state:13)
-  // https://api.census.gov/data/2017/acs/acs1/subject?get=S1901_C04_012E&for=state:13&key=5431a0d93dfd0097df1f5e372a56adc1513cfd5b
-  // S1901_C04_012E, Nonfamily households!!Estimate!!Median income (dollars)
-  // Data format - Contains an array of requests, then an array of responses.
-  // The first value in the response is our desired value: S1901_C04_012E, Nonfamily households!!Estimate!!Median income (dollars)
-  // thus we use: data[1][0]
-
-  let gaMedianSingleIncome;
-  function fetchGeorgiaMedianIncome() {
-    const queryURL = "https://api.census.gov/data/2017/acs/acs1/subject?get=S1901_C04_012E&for=state:13&key=5431a0d93dfd0097df1f5e372a56adc1513cfd5b";
-
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-    }).then(function (data) {
-      gaMedianSingleIncome = data[1][0];
-    });
-  }
-
   // Taxee
   // apikey: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBUElfS0VZX01BTkFHRVIiLCJodHRwOi8vdGF4ZWUuaW8vdXNlcl9pZCI6IjVjYjEzZWE0Y2YwN2JkNDJjY2UyMjc0MCIsImh0dHA6Ly90YXhlZS5pby9zY29wZXMiOlsiYXBpIl0sImlhdCI6MTU1NTExOTc4MH0.DS4jUCTf1099rMvn_VY_PxUhCqFqG5MhPnH7qxlb0S4
   // Data format
@@ -31,18 +8,19 @@ $(function () {
   let taxeeFedData;
   let taxeeBracketCount; // Only need to get this once.
   function getFedTaxes(income, filingType = "single") {
-    //We will apply the marginal_rate for each bracket up to the ammount it contains.
     let taxesOwed = 0;
-    if (taxeeFedData != undefined) {
+    const stdDeduction = taxeeFedData[filingType].deductions[0].deduction_amount;
+    const evaluatedIncome = income - stdDeduction;
+    if ((taxeeFedData != undefined) && evaluatedIncome > 0) {
       for (let i = 0; i < taxeeBracketCount; i++) {
         //No need to evaluate if you aren't in this bracket.
-        if (income > taxeeFedData[filingType].income_tax_brackets[i].bracket) {
+        if (evaluatedIncome > taxeeFedData[filingType].income_tax_brackets[i].bracket) {
           //Taxes from previous brackets combined
           const previousTotal = taxeeFedData[filingType].income_tax_brackets[i].amount;
           //Subtract out the previous bracket and multiple times the rate.
-          const thisBracket = (income - taxeeFedData[filingType].income_tax_brackets[i].bracket) * taxeeFedData[filingType].income_tax_brackets[i].marginal_rate / 100;
-          const stdDeduction = taxeeFedData[filingType].deduction_amount;
-          taxesOwed = previousTotal + thisBracket - stdDeduction;
+          const thisBracket = (evaluatedIncome - taxeeFedData[filingType].income_tax_brackets[i].bracket) * taxeeFedData[filingType].income_tax_brackets[i].marginal_rate / 100;
+          
+          taxesOwed = previousTotal + thisBracket;
         } //We will overwrite the Taxes owed until we hit the appropriate Tax rate.
       }
     }
@@ -61,6 +39,40 @@ $(function () {
     });
 }
 
+let gaMedianSingleIncome;
+function fetchGeorgiaMedianIncome() {
+  const queryURL = "https://api.census.gov/data/2017/acs/acs1/subject?get=S1901_C04_012E&for=state:13&key=5431a0d93dfd0097df1f5e372a56adc1513cfd5b";
+
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  }).then(function (data) {
+    gaMedianSingleIncome = data[1][0];
+    $("#gaMedianIncome").text("$"+gaMedianSingleIncome);
+  });
+}
+
+//sliderOutput
+// function sliderOutput() {
+//   const val = $('#slider2').val();
+//   $("#slider2output").html(val);
+// }
+
+$(function () {
+
+  // Census
+  // apKey: 5431a0d93dfd0097df1f5e372a56adc1513cfd5b
+  // Geography level will be us (&for=us:1) or Georgia state (&for=state:13)
+  // https://api.census.gov/data/2017/acs/acs1/subject?get=S1901_C04_012E&for=state:13&key=5431a0d93dfd0097df1f5e372a56adc1513cfd5b
+  // S1901_C04_012E, Nonfamily households!!Estimate!!Median income (dollars)
+  // Data format - Contains an array of requests, then an array of responses.
+  // The first value in the response is our desired value: S1901_C04_012E, Nonfamily households!!Estimate!!Median income (dollars)
+  // thus we use: data[1][0]
+
+
+
+  
+  fetchGeorgiaMedianIncome();
 // firebase
 var config = {
     apiKey: "AIzaSyA_OTRPTqH6qlBHv6DgxXyZZROR5TYIQoc",

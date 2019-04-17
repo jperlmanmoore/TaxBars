@@ -2,95 +2,318 @@
 <html lang="en">
 
 <head>
-    <title>Title</title>
+    <title>Budget Bootcamp</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Materializ CSS -->
+    <!-- Materalize CSS -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Anton|Asap|Dosis|Hind|Montserrat|Quattrocento+Sans|Questrial|Quicksand|Raleway"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
+<!-- Most materalize css html on the index page is basically modified examples from the Materalize webpage documentation -->
 
 <body>
+    <!-- Navbar structure -->
 
-  <!-- Jacob Workspace -->
-    <form action="#">
+    <nav class="light-green lighten-3 navbarbkgrnd">
+        <div class="nav-wrapper">
+            <a class="navbrand-logo brown-text text-darken-2 navbartext">Budget Bootcamp</a>
+            <ul class="right hide-on-med-and-down">
+                <li id="navbarbtn" class="btn btn-flat light-green lighten-3 text brown-text right">Contact</li>
+                <li id="navbarbtn" class="btn btn-flat light-green lighten-3 text brown-text right">About US</li>
+                <li id="navbarbtn" class="btn btn-flat light-green lighten-3 text brown-text right">Login</li>
+                <li id="navbarbtn signup" class="btn btn-flat light-green lighten-3 text brown-text right">Signup</li>
+            </ul>
+        </div>
+    </nav>
 
-            <div class="row">
-                    <form class="col s12">
-                      <div class="row">
-                        <div class="input-field col s6">
-                          <input id="first_name" type="text" class="validate">
-                          <label for="first_name">First Name</label>
-                        </div>
-                        <div class="input-field col s6">
-                          <input id="last_name" type="text" class="validate">
-                          <label for="last_name">Last Name</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="input-field col s12">
-                          <input id="password" type="password" class="validate">
-                          <label for="password">Password</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="input-field col s12">
-                          <input id="email" type="email" class="validate">
-                          <label for="email">Email</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                            <div class="input-field col s12">
-                            <input id="birthday" type="text" class="datepicker">
-                            <label for="birthday">Birthday</label>
-                      </div>
-                    </form>
-                  </div>
-            
-                  
-        <ul class="collapsible">
-            <li>
-                <div id="title1" class="collapsible-header">First<i id="iconId1" class="material-icons iright">lock_open</i></div>
-                 <p class="range-field collapsible-body">
-                    <input type="range" id="rangeId1" min="0" max="100" />
-                    Description Area
-                </p>
+    <div class="container s12 m8">
+        <div class="headertext container text center">
+            <h4 class="brown-text text-darken-2">Compare your budget with the federal median income budget.</h4>
+        </div>
+    </div>
 
+    <div class="container">
+
+        <div class="row">
+            <!-- *I like the cards better, butI did one row as colum and one row as cards. You guys can pick the difference and see what you like better. -->
+            <!-- sliders -->
+            <div class="col s12 m6">
+                <div class="card light-green lighten-4 text center">
+                    <div class="card-image">
+                        <img src="assets/images/money-2724241_1920.2.jpg">
+                        <span class="card-title white-text">
+                            <h3 class="textcardtitle">My Budget</h3>
+                        </span>
+                    </div>
+                    <p class="text brown-text text-darken-2">initial budget based on federal median income</p>
+                    <br>
+                    <p>$345345</p>
+                    <p>$345345345 Estimated fed income tax</p>
+
+                    <div class="container" id="slidercontainer">
+                        <form>
+                            <div id="value"></div>
+                            <input type="range" value="200" step="1" class="slider" id="slider2" min="0" max="200"
+                                name="weight" oninput="sliderOutput()"><!---->
+                            <output id="slider2output"></output>
+                        </form>
+                    </div>
+
+
+                    <div class="card-action">
+                        <p class="text brown-text text-darken-2">Total</p>
+                    </div>
+                </div>
             </div>
-            </li>
-            <li>
-                    <div id="title2" class="collapsible-header">Second<i id="iconId2" class="material-icons iright">lock_open</i></div>
-                    <p class="range-field collapsible-body">
-                    <input type="range" id="rangeId2" min="0" max="100" />
-                    Description Area
-                </p>
-            </li>
-            <li>
-                    <div id="title3" class="collapsible-header">Third<i id="iconId3" class="material-icons iright">lock_open</i></div>
-                    <p class="range-field collapsible-body">
-                    <input type="range" id="rangeId3" min="0" max="100" />
-                    Description Area 
-                </p>
-            </li>
-        </ul>
-    </form>
 
- <!-- Jennifer Workspace -->
+            <!-- space -->
+            <div class="col s1"></div>
 
-  <!-- Hilary Workspace -->
+            <!-- modal -->
+            <div class="containter">
+                <div class="col s12 m6">
+                    <div class="modalmargin center-align">
+                        <a class="waves-effect waves-light white btn light-green lighten-3 modal-trigger text brown-text text-darken-2 text"
+                            href="#modal1"> enter your information </a>
+                        <div id="modal1" class="modal">
+                            <div class="modal-content">
+                                <h4 class="text brown-text text-darken-2 text">Something</h4>
+                                <!-- form structure -->
+                                <div class="row">
+                                    <form id="modalForm" class="col s12">
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input placeholder="enter any name your want" id="first_name"
+                                                    type="text" class="validate text brown-text text-darken-2" required>
+                                                <label for="name" class="text brown-text text-darken-2">first
+                                                    name</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input placeholder="your dream GA address" id="state" type="text"
+                                                    class="validate" required>
+                                                <label for="address"
+                                                    class="text brown-text text-darken-2">address</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input placeholder="enter your dream income" id="income" type="number"
+                                                    class="validate" required>
+                                                <label for="income" class="text text brown-text text-darken-2">annual
+                                                    income</label>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="#!" id="submit"
+                                    class="modal-close waves-effect waves-light btn-flat text text brown-text text-darken-2">Submit</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Income and Tax Comparison Cards -->
+            <div class="col s12 m6">
+                <div class="card light-green lighten-5">
+                    <div class="card-image waves-effect waves-block waves-light">
+                    </div>
+                    <!-- class="activator" -->
+                    <div class="card-content">
+                        <span class="text card-title activator text brown-text text-darken-2 left">Federal Median Income
+                            Budget<i class="text brown-text text-darken-2">compare yours</i></span>
+                        
+                        <a href="https://wallethacks.com/average-household-spending-budget/"
+                            class="text brown-text text-darken-2">Budget
+                            Article</a>
+                    </div>
+                    <div class="card-reveal light-green lighten-5">
+                        <span class="card-title text brown-text text-darken-2">
+                            <i class="material-icons right">close</i></span>
+                        <div class="container">
+                            <table class="striped centered responsive">
+                                <h5 class="text center brown-text text-darken-2">Median Income Budget</h5>
+                                <thead>
+                                    <tr>
+                                        <th class="text">Expense</th>
+                                        <th class="text">Amount</th>
+                                    </tr>
+                                </thead>
 
-    <!-- May be used for some extended behavior I'd like to add -->
-    <i class="material-icons">lock</i>
+                                <tbody>
+                                    <tr>
+                                        <td class="text">Alvin</td>
+                                        <td class="text">Eclair</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text">Alvin</td>
+                                        <td class="text">Eclair</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text">Alvin</td>
+                                        <td class="text">Eclair</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m6">
+                <div class="card light-green lighten-4">
+                    <div class="card-image waves-effect waves-block waves-light">
+                    </div>
+                    <!-- class="activator" -->
+                    <div class="card-content">
+                        <span class="text card-title activator text brown-text text-darken-2 left">Georgia Median Income
+                            Budget<i class="text brown-text text-darken-2">compare yours</i></span>
+                        
+                        <a href="https://wallethacks.com/average-household-spending-budget/"
+                            class="text brown-text text-darken-2">Budget
+                            Article</a>
+                    </div>
+                    <div class="card-reveal light-green lighten-4">
+                        <span class="card-title text brown-text text-darken-2">
+                            <i class="material-icons right">close</i></span>
+                        <div class="container">
+                            <table class="striped centered responsive">
+                                <h5 class="text center brown-text text-darken-2">Median Income Budget</h5>
+                                <thead>
+                                    <tr>
+                                        <th class="text">Expense</th>
+                                        <th class="text">Amount</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td class="text">Alvin</td>
+                                        <td class="text">Eclair</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text">Alvin</td>
+                                        <td class="text">Eclair</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text">Alvin</td>
+                                        <td class="text">Eclair</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m6">
+                <div class="card-panel light-green lighten-3">
+                    <h5 class="text left text brown-text text-darken-2">Your Estimated Federal Taxes</h5>
+                    <p id="gaMedianIncome" class="text clearfix text brown-text text-darken-2">$23452345</p>
+                    <!-- ***API DATA ON federal estimated income tax in that AREA -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- table structure -->
+    <!-- you add new colums by adding <thead><tr><th>(each table head) tag -->
+    <div class="container">
+        <table class="striped centered responsive">
+            <h2 class="text center">comparison of recent user data</h2>
+            <thead id="tableHeader">
+                <tr>
+                    <th class="text">Name</th>
+                    <th class="text">State</th>
+                    <th class="text">My Income</th>
+                    <th class="text">My Estimated Fed Income Tax</th>
+                </tr>
+            </thead>
+
+            <tbody id="table1">
+                <!--inserting the firebase data, creating new <tr><td>-->
+            </tbody>
+
     
 
-    <!-- jQuery then react then material ui -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+            <!-- <tbody>
+                <tr id="tableRow">
+                    <td class="text">Alvin</td>
+                    <td class="text">Eclair</td>
+                    <td class="text">$0.87</td>
+                    <td class="text">$.10</td>
+                    <td class="text">$.10</td>
+
+                </tr>
+                <tr>
+                    <td class="text">Alvin</td>
+                    <td class="text">Eclair</td>
+                    <td class="text">$0.87</td>
+                    <td class="text">$.10</td>
+                    <td class="text">$.10</td>
+
+                </tr>
+                <tr>
+                    <td class="text">Alvin</td>
+                    <td class="text">Eclair</td>
+                    <td class="text">$0.87</td>
+                    <td class="text">$.10</td>
+                    <td class="text">$.10</td>
+
+                </tr>
+            </tbody> -->
+        </table>
+    </div>
+
+    <br>
+
+    <footer class="page-footer light-green lighten-4">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="text brown-text text-darken-2">Budget Bootcamp</h5>
+                    <p class="text brown-text text-darken-2">Budget Bootcamp was established in 2019, in Atlanta, GA and
+                        founded by
+                        amazing students in the GA Tech coding Bootcamp. </p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="text brown-text text-darken-2">More info</h5>
+                    <ul>
+                        <li><a class="text brown-text text-darken-2"
+                                href="https://www.consumer.gov/articles/1002-making-budget">How to
+                                Make a Budget</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container center">
+                © 2019 Bootcamp Project1 Team1
+            </div>
+        </div>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="assets/javascript/script.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-database.js"></script> -->
+
+
+    <script src="assets/javascript/project1.js"></script>
+
 </body>
 
 </html>

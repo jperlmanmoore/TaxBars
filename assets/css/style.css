@@ -1,11 +1,85 @@
-
-/* Jacob Section */
-.iright {
-    position:absolute;
-    right:0px;
+body {
+    background-color: rgb(248, 245, 245);
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
-/* Jennifer Section */
+.navbartext {
+    /* font-family: 'Montserrat', sans-serif; */
+    font-family: 'Raleway', sans-serif;
+    /* font-family: 'Quicksand', sans-serif; */
+    /* font-family: 'Dosis', sans-serif; */
+    /* font-family: 'Hind', sans-serif; */
+    /* font-family: 'Asap', sans-serif; */
+    /* font-family: 'Questrial', sans-serif; */
+    /* font-family: 'Quattrocento Sans', sans-serif; */
+    font-weight: 600;
+    margin-left: 50px;
+    }
+
+.text {
+     font-family: 'Montserrat', sans-serif;
+    /* font-family: 'Raleway', sans-serif; */
+    /* font-family: 'Quicksand', sans-serif; */
+    /* font-family: 'Dosis', sans-serif; */
+    /* font-family: 'Hind', sans-serif; */
+    /* font-family: 'Asap', sans-serif; */
+    /* font-family: 'Questrial', sans-serif; */
+    /* font-family: 'Quattrocento Sans', sans-serif; */
+    /* font-weight: bolder; */
+    }
 
 
-/* Hilary Section */
+.slidercontainer {
+    height: 2px;
+}
+
+    output {
+        display: inline;
+    }
+.loginsignup {
+    margin: 5px;
+    margin-top: 50px;
+}
+
+.modalmargin {
+    margin-bottom: 15px;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.navbarheight, .navbarbkgrnd {
+    height: 110px !important; 
+    font-size: 50px;
+} 
+
+
+
+#slider2{
+    height: 25px;
+}
+
+.thumb{
+    top:10px !important;
+}
+
+output {
+    display: inline;
+}
+
+/* #sliderlabel {
+    margin-top: 60px;
+    font-weight: bold;
+} */
+
+i {
+  font-size: 16px; 
+  margin-top: 5px; 
+}
+
+h4 {
+    margin-bottom: 25px;
+}
