@@ -52,6 +52,12 @@ function fetchGeorgiaMedianIncome() {
   });
 }
 
+//sliderOutput
+function sliderOutput() {
+  const val = $('#slider2').val();
+  $("#slider2output").html(val);
+};
+
 $(function () {
 
   // Census
@@ -184,15 +190,3 @@ $("#submit").on("click", function (e) {
 
 
 }); //end document
-
-
-
-
-
-}); //end document
-
-//sliderOutput
-function sliderOutput() {
-  const val = $('#slider2').val();
-  $("#slider2output").html(val);
-};
