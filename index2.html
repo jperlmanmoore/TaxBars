@@ -22,10 +22,14 @@
         <div class="nav-wrapper">
             <a class="navbrand-logo brown-text text-darken-2 navbartext">Budget Bootcamp</a>
             <ul class="right hide-on-med-and-down">
-                <li id="login" class="btn btn-flat light-green lighten-3"><a class="light-green lighten-3 text brown-text right" href="login.html">Login</a></li>
-                <li id="signup" class="btn btn-flat light-green lighten-3"><a class="light-green lighten-3 text brown-text right" href="signup.html">Signup</a></li>
-                <li id="about" class="btn btn-flat light-green lighten-3"><a class="light-green lighten-3 text brown-text right" href="about.html">About</a></li>
-                <li id="contact" class="btn btn-flat light-green lighten-3"><a class="light-green lighten-3 text brown-text right" href="contact.html">Contact</a></li>
+                <li id="login" class="btn btn-flat light-green lighten-3"><a
+                        class="light-green lighten-3 text brown-text right" href="login.html">Login</a></li>
+                <li id="signup" class="btn btn-flat light-green lighten-3"><a
+                        class="light-green lighten-3 text brown-text right" href="signup.html">Signup</a></li>
+                <li id="about" class="btn btn-flat light-green lighten-3"><a
+                        class="light-green lighten-3 text brown-text right" href="about.html">About</a></li>
+                <li id="contact" class="btn btn-flat light-green lighten-3"><a
+                        class="light-green lighten-3 text brown-text right" href="contact.html">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -41,7 +45,7 @@
         <div class="row">
             <!-- sliders & card -->
             <div class="col s12 m6">
-                <div class="card light-green lighten-4 text center">
+                <div class="card light-green lighten-5 text center">
                     <div class="card-image">
                         <img src="assets/images/money-2724241_1920.2.jpg">
                         <span class="card-title white-text">
@@ -57,7 +61,8 @@
                         <form>
                             <div id="value"></div>
                             <input type="range" value="200" step="1" class="slider" id="slider2" min="0" max="200"
-                                name="weight" oninput="sliderOutput()"><!---->
+                                name="weight" oninput="sliderOutput()">
+                            <!---->
                             <output id="slider2output"></output>
                         </form>
                     </div>
@@ -76,7 +81,7 @@
             <div class="containter">
                 <div class="col s12 m6">
                     <div class="modalmargin center-align">
-                        <a class="waves-effect waves-light white btn light-green lighten-3 modal-trigger text brown-text text-darken-2 text"
+                        <a class="waves-effect waves-light white btn light-green lighten-5 modal-trigger text brown-text text-darken-2 text"
                             href="#modal1"> enter your information </a>
                         <div id="modal1" class="modal">
                             <div class="modal-content">
@@ -126,45 +131,105 @@
                     </div>
                     <!-- class="activator" -->
                     <div class="card-content">
-                        <span class="text card-title activator text brown-text text-darken-2">Federal Median Budget
-                        <i class="text brown-text text-darken-2 right"> view federal</i></span>
-                        
-                        <a href="https://wallethacks.com/average-household-spending-budget/"
-                            class="text brown-text text-darken-2 left">Budget
-                            Article</a>
+                        <span class="card-title text brown-text text-darken-2 center">Federal Median Income
+                            Budget</span>
+                        <p class="text brown-text text-darken-2 center">Say something here, it can be whatever you like
+                            to put
+                            here.</p>
                     </div>
-                    <div class="card-reveal light-green lighten-5">
-                        <span class="card-title text brown-text text-darken-2">
-                            <i class="material-icons right">close</i></span>
-                        <div class="container">
-                            <table class="striped centered responsive">
-                                <h5 class="text center brown-text text-darken-2">Median Income Budget</h5>
-                                <thead>
-                                    <tr>
-                                        <th class="text">Expense</th>
-                                        <th class="text">Amount</th>
-                                    </tr>
-                                </thead>
+                    <div class="modalmargin2 center-align">
+                        <a class="waves-effect waves-light white btn btn-flat light-green lighten-5 modal-trigger text brown-text text-darken-2 text"
+                            href="#modal2"> view </a>
+                        <div id="modal2" class="modal">
+                            <div class="modal-content">
 
-                                <tbody>
-                                    <tr>
-                                        <td class="text">Alvin</td>
-                                        <td class="text">Eclair</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text">Alvin</td>
-                                        <td class="text">Eclair</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text">Alvin</td>
-                                        <td class="text">Eclair</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                <!-- form structure -->
+                                <div class="row">
+                                    <table class="striped centered responsive">
+                                        <h5 class="text center brown-text text-darken-2">Federal Median Income
+                                            Budget</h5>
+                                        <thead>
+                                            <tr>
+                                                <th class="text">Expense</th>
+                                                <th class="text">Amount</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr>
+                                                <td class="text">Alvin</td>
+                                                <td class="text">Eclair</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text">Alvin</td>
+                                                <td class="text">Eclair</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text">Alvin</td>
+                                                <td class="text">Eclair</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+
+            <div class="col s12 m6">
+                <div class="card light-green lighten-5">
+                    <div class="card-image waves-effect waves-block waves-light">
+                    </div>
+                    <!-- class="activator" -->
+                    <div class="card-content">
+                        <span class="card-title text brown-text text-darken-2 center">State Median Income
+                            Budget</span>
+                        <p class="text brown-text text-darken-2 center">Say something here, it can be whatever you like
+                            to put
+                            here.</p>
+                    </div>
+                    <div class="modalmargin2 center-align">
+                        <a class="waves-effect waves-light white btn btn-flat light-green lighten-5 modal-trigger text brown-text text-darken-2 text"
+                            href="#modal3"> view </a>
+                        <div id="modal3" class="modal">
+                            <div class="modal-content">
+
+                                <!-- form structure -->
+                                <div class="row">
+                                    <table class="striped centered responsive">
+                                        <h5 class="text center brown-text text-darken-2">State Median Income
+                                            Budget</h5>
+                                        <thead>
+                                            <tr>
+                                                <th class="text">Expense</th>
+                                                <th class="text">Amount</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr>
+                                                <td class="text">Alvin</td>
+                                                <td class="text">Eclair</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text">Alvin</td>
+                                                <td class="text">Eclair</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text">Alvin</td>
+                                                <td class="text">Eclair</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
             <div class="col s12 m6">
                 <div class="card light-green lighten-4">
@@ -172,98 +237,48 @@
                     </div>
                     <!-- class="activator" -->
                     <div class="card-content">
-                            <span class="text card-title activator text brown-text text-darken-2">State Median Budget
-                            <i class="text brown-text text-darken-2 right"> view state</i></span>
-                            
-                            <a href="https://wallethacks.com/average-household-spending-budget/"
-                                class="text brown-text text-darken-2 left">Budget
-                                Article</a>
-                        </div>
-                    <div class="card-reveal light-green lighten-4">
-                        <span class="card-title text brown-text text-darken-2">
-                            <i class="material-icons right">close</i></span>
-                        <div class="container">
-                            <table class="striped centered responsive">
-                                <h5 class="text center brown-text text-darken-2">Median Income Budget</h5>
-                                <thead>
-                                    <tr>
-                                        <th class="text">Expense</th>
-                                        <th class="text">Amount</th>
-                                    </tr>
-                                </thead>
+                        <span class="card-title text brown-text text-darken-2 center">My Comparison
+                            Budget</span>
+                        <p class="text brown-text text-darken-2 center">Say something here, it can be whatever you like
+                            to put
+                            here.</p>
+                    </div>
+                    <div class="modalmargin2 center-align">
+                        <a class="waves-effect waves-light white btn btn-flat light-green lighten-4 modal-trigger text brown-text text-darken-2 text"
+                            href="#modal4"> view </a>
+                        <div id="modal4" class="modal">
+                            <div class="modal-content">
 
-                                <tbody>
-                                    <tr>
-                                        <td class="text">Alvin</td>
-                                        <td class="text">Eclair</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text">Alvin</td>
-                                        <td class="text">Eclair</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text">Alvin</td>
-                                        <td class="text">Eclair</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                <!-- form structure -->
+                                <div class="row">
+                                    <table class="striped centered responsive">
+                                        <h5 class="text center brown-text text-darken-2">My Comparison Budget</h5>
+                                        <thead>
+                                            <tr>
+                                                <th class="text">Expense</th>
+                                                <th class="text">Amount</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr>
+                                                <td class="text">Alvin</td>
+                                                <td class="text">Eclair</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text">Alvin</td>
+                                                <td class="text">Eclair</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text">Alvin</td>
+                                                <td class="text">Eclair</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-
-
-            <div class="col s12 m6">
-                <div class="card light-green lighten-4">
-                    <div class="card-image waves-effect waves-block waves-light">
-                    </div>
-                    <!-- class="activator" -->
-                    <div class="card-content">
-                            <span class="text card-title activator text brown-text text-darken-2">My Budget
-                            <i class="text brown-text text-darken-2 right"> view mine</i></span>
-                            
-                            <a href="https://wallethacks.com/average-household-spending-budget/"
-                                class="text brown-text text-darken-2 left">Budget
-                                Article</a>
-                        </div>
-                    <div class="card-reveal light-green lighten-4">
-                        <span class="card-title text brown-text text-darken-2">
-                            <i class="material-icons right">close</i></span>
-                        <div class="container">
-                            <table class="striped centered responsive">
-                                <h5 class="text center brown-text text-darken-2">My Budget</h5>
-                                <thead>
-                                    <tr>
-                                        <th class="text">Expense</th>
-                                        <th class="text">Amount</th>
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-                                    <tr>
-                                        <td class="text">Alvin</td>
-                                        <td class="text">Eclair</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text">Alvin</td>
-                                        <td class="text">Eclair</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text">Alvin</td>
-                                        <td class="text">Eclair</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col s12 m6">
-                <div class="card-panel light-green lighten-3">
-                    <h5 class="text text brown-text text-darken-2 center">Your Estimated Federal Taxes</h5>
-                    <p class="text text brown-text text-darken-2 center">$23452345</p>
-                    <!-- ***API DATA ON federal estimated income tax in that AREA -->
                 </div>
             </div>
         </div>
@@ -287,8 +302,6 @@
             <tbody id="table1">
                 <!--inserting the firebase data, creating new <tr><td>-->
             </tbody>
-
-    
 
             <!-- <tbody>
                 <tr id="tableRow">
