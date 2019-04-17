@@ -78,13 +78,14 @@ var config = {
 
  
 
-//sliderOutput
-function sliderOutput() {
-  const val = $('#slider2').val();
-  $("#slider2output").html(val);
-};
 
 sliderOutput();
+
+/*
+$("#slidercontainer").on("oninput", function(e) { 
+  sliderOutput();
+});
+*/
 
 //input of 
 $("#submit").on("click", function (e) {
@@ -98,6 +99,7 @@ $("#submit").on("click", function (e) {
 
     e.preventDefault();
 
+    // *** get rid of any dollar sign or any other special character -- or put static text -JM
     //const firstName  = $("#first_name").val().trim();
     let tmp = $("#first_name").val().trim();
 
@@ -155,3 +157,9 @@ $("#submit").on("click", function (e) {
     fetchGeorgiaMedianIncome();
 
 }); //end document
+
+//sliderOutput
+function sliderOutput() {
+  const val = $('#slider2').val();
+  $("#slider2output").html(val);
+};
