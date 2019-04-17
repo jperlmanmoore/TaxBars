@@ -52,15 +52,17 @@
                     </div>
                     <p class="text brown-text text-darken-2">initial budget based on federal median income</p>
                     <br>
-                    <p>$345345</p>
-                    <p>$345345345 Estimated fed income tax</p>
+                    <p id="budget"></p>
+                    <p id="fedTaxEstimate"></p>
 
-                    <div class="container" id="slidercontainer">
-                        <form>
-                            <div id="value"></div>
-                            <input type="range" value="200" step="1" class="slider" id="slider2" min="0" max="200"
-                                name="weight" oninput="sliderOutput()"><!---->
+                    <div class="container" >
+                        <form id="sliderArea">
+                            <!-- <input type="range" value="200" step="1" class="slider" id="slider2" min="0" max="200"
+                                name="weight" oninput="sliderOutput()">
                             <output id="slider2output"></output>
+                                <input type="range" value="200" step="1" class="slider" id="slider3" min="0" max="200"
+                                    name="weight" oninput="sliderOutput()">
+                                <output id="slider2output2">100</output> -->
                         </form>
                     </div>
 
@@ -130,7 +132,7 @@
                     <div class="card-content">
                         <span class="text card-title activator text brown-text text-darken-2 left">Federal Median Income
                             Budget<i class="text brown-text text-darken-2">compare yours</i></span>
-                        
+
                         <a href="https://wallethacks.com/average-household-spending-budget/"
                             class="text brown-text text-darken-2">Budget
                             Article</a>
@@ -176,7 +178,7 @@
                     <div class="card-content">
                         <span class="text card-title activator text brown-text text-darken-2 left">Georgia Median Income
                             Budget<i class="text brown-text text-darken-2">compare yours</i></span>
-                        
+
                         <a href="https://wallethacks.com/average-household-spending-budget/"
                             class="text brown-text text-darken-2">Budget
                             Article</a>
@@ -217,7 +219,7 @@
             <div class="col s12 m6">
                 <div class="card-panel light-green lighten-3">
                     <h5 class="text left text brown-text text-darken-2">Your Estimated Federal Taxes</h5>
-                    <p id="gaMedianIncome" class="text clearfix text brown-text text-darken-2">$23452345</p>
+                    <p id="gaMedianIncome" class="text clearfix text brown-text text-darken-2">$0</p>
                     <!-- ***API DATA ON federal estimated income tax in that AREA -->
                 </div>
             </div>
@@ -242,7 +244,7 @@
                 <!--inserting the firebase data, creating new <tr><td>-->
             </tbody>
 
-    
+
 
             <!-- <tbody>
                 <tr id="tableRow">
