@@ -1,6 +1,5 @@
 $(function () {
 
-
   // Census
   // apKey: 5431a0d93dfd0097df1f5e372a56adc1513cfd5b
   // Geography level will be us (&for=us:1) or Georgia state (&for=state:13)
@@ -21,7 +20,6 @@ $(function () {
       gaMedianSingleIncome = data[1][0];
     });
   }
-
 
   // Taxee
   // apikey: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBUElfS0VZX01BTkFHRVIiLCJodHRwOi8vdGF4ZWUuaW8vdXNlcl9pZCI6IjVjYjEzZWE0Y2YwN2JkNDJjY2UyMjc0MCIsImh0dHA6Ly90YXhlZS5pby9zY29wZXMiOlsiYXBpIl0sImlhdCI6MTU1NTExOTc4MH0.DS4jUCTf1099rMvn_VY_PxUhCqFqG5MhPnH7qxlb0S4
@@ -78,10 +76,9 @@ var config = {
 
   let user = {};
 
-// empty modal  
-  
+ 
 
-
+//sliderOutput
 function sliderOutput() {
   const val = $('#slider2').val();
   $("#slider2output").html(val);
@@ -89,27 +86,17 @@ function sliderOutput() {
 
 sliderOutput();
 
-
-
-
+//input of 
 $("#submit").on("click", function (e) {
 
   e.preventDefault();
 
-
-
 });
-
-
 
 //submit data to firebase when click submit, but not if field is empty & clear text-input fields
   $("#signup").on("click", function (e) {
 
     e.preventDefault();
-
-
-
-
 
     //const firstName  = $("#first_name").val().trim();
     let tmp = $("#first_name").val().trim();
