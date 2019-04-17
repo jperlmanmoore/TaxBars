@@ -53,10 +53,10 @@ function fetchGeorgiaMedianIncome() {
 }
 
 //sliderOutput
-function sliderOutput() {
-  const val = $('#slider2').val();
-  $("#slider2output").html(val);
-};
+// function sliderOutput() {
+//   const val = $('#slider2').val();
+//   $("#slider2output").html(val);
+// }
 
 $(function () {
 
