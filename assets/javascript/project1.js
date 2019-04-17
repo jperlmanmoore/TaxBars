@@ -130,6 +130,8 @@ $(function () {
     $("#slider2output").html(val);
   };
 
+  sliderOutput();
+
 
   //source = https://wallethacks.com/average-household-spending-budget/
   function populateTable(income) {
@@ -148,29 +150,32 @@ $(function () {
     );
   }; //end write user data
 
- // HS -- to write the Firebase data to the end table. Tried two different ways but neither seem to do the trick.
+  // HS -- to write the Firebase data to the end table. Tried two different ways but neither seem to do the trick.
   //var database = firebase.database();
   //database.ref().once('value', function(snapshot){
-    // database.ref().once('value', function(snapshot){
-    //       var content = '';
-    //       snapshot.forEach(function(data){
-    //           var val = data.val();
-    //           content +='<tr>';
-    //           content += '<td>' + user.firstName + '</td>';
-    //           content += '<td>' + user.income + '</td>';
-    //           content += '<td>' + user.state + '</td>';
-    //       });
-    //       $('#tableRow').append(content);
-    //     });
-  
+  // database.ref().once('value', function(snapshot){
+  //       var content = '';
+  //       snapshot.forEach(function(data){
+  //           var val = data.val();
+  //           content +='<tr>';
+  //           content += '<td>' + user.firstName + '</td>';
+  //           content += '<td>' + user.income + '</td>';
+  //           content += '<td>' + user.state + '</td>';
+  //       });
+  //       $('#tableRow').append(content);
+  //     });
 
-  
-  database.ref().on("child_added", function(childSnapshot, prevChildKey) {
+  function addChildToTable(snapshot) {
+    $("#table1").append(snapshot.val().firstName + " | " + snapshot.val().income + " | " + snapshot.val().state);
+    debugger;
+  }
 
+  //Event listener for the child added event in the database 'users' scope
+  database.ref('users').on("child_added", function (childSnapshot, prevChildKey) {
     console.log(childSnapshot.val());
-    $("#table1").text(childSnapshot.val().firstName + " | " + childSnapshot.val().income + " | " + childSnapshot.val().state);
+    addChildToTable(childSnapshot);
   })
-  
+
 
   //   function populateFBTable(data, key) {
   //     var html = '';
@@ -185,23 +190,19 @@ $(function () {
   //   }
   //  // end of the bottom table
 
-    //document ready functions
-    $(document).ready(function () {
-      M.updateTextFields();
-      $('.modal').modal();
-      fetchTaxeeData();
-      fetchGeorgiaMedianIncome();
-    });
+  //document ready functions
+  // $(document).ready(function () {
+  M.updateTextFields();
+  $('.modal').modal();
+  fetchTaxeeData();
+  fetchGeorgiaMedianIncome();
+  // });
 
 
 
 
 
-
-
-
-
-  }); //end document
+}); //end document
 
 
 
