@@ -55,16 +55,17 @@
                     </div>
                     <p class="text brown-text text-darken-2">initial budget based on federal median income</p>
                     <br>
-                    <p>$345345</p>
-                    <p>$345345345 Estimated fed income tax</p>
+                    <p id="budget"></p>
+                    <p id="fedTaxEstimate"></p>
 
-                    <div class="container" id="slidercontainer">
-                        <form>
-                            <div id="value"></div>
-                            <input type="range" value="200" step="1" class="slider" id="slider2" min="0" max="200"
+                    <div class="container" >
+                        <form id="sliderArea">
+                            <!-- <input type="range" value="200" step="1" class="slider" id="slider2" min="0" max="200"
                                 name="weight" oninput="sliderOutput()">
-                            <!---->
                             <output id="slider2output"></output>
+                                <input type="range" value="200" step="1" class="slider" id="slider3" min="0" max="200"
+                                    name="weight" oninput="sliderOutput()">
+                                <output id="slider2output2">100</output> -->
                         </form>
                     </div>
 
@@ -288,7 +289,7 @@
     <!-- you add new colums by adding <thead><tr><th>(each table head) tag -->
     <div class="container">
         <table class="striped centered responsive">
-            <h2 class="text center">comparison of recent user data</h2>
+            <h2 class="text center brown-text darken-2">comparison of recent user data</h2>
             <thead id="tableHeader">
                 <tr>
                     <th class="text">Name</th>
