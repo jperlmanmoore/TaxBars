@@ -30,6 +30,14 @@ body {
     /* font-weight: bolder; */
     }
 
+
+.slidercontainer {
+    height: 2px;
+}
+
+    output {
+        display: inline;
+    }
 .loginsignup {
     margin: 5px;
     margin-top: 50px;
@@ -53,28 +61,10 @@ main {
     height: 150px !important; 
 } 
 
-<<<<<<< HEAD
-/*  */
 
-
-/* slider Hilary, was this something we need? Not sure...*/
-/* #value{
-    color: red;
-    font-size: 15px;
-    transform: rotate(135deg);
-    position: relative;
-    top: -40px;
-} */
-=======
->>>>>>> 18c6a8f9f6253048f29614e951c64ec21c8822d5
-
-#slidercontainer{
-    position:relative !important;
-}
 
 #slider2{
-    height: 15px;
-    top: 50px;
+    height: 25px;
 }
 
 .thumb{
@@ -82,10 +72,10 @@ main {
 }
 /* end slider */
 
-#sliderlabel {
+/* #sliderlabel {
     margin-top: 60px;
     font-weight: bold;
-}
+} */
 
 i {
   font-size: 16px; 

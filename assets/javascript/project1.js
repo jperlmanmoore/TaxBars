@@ -61,37 +61,10 @@ $(function () {
         taxeeBracketCount = data.single.income_tax_brackets.length; //All filing types have the same number of brackets so grabbing for single is ok for now.
       }
     });
-<<<<<<< HEAD
 }
 
 // firebase
 var config = {
-=======
-  }
-
-  // BEA 
-  // User Guide: https://apps.bea.gov/api/_pdf/bea_web_service_api_user_guide.pdf
-  // Query example: https://apps.bea.gov/api/data/?&UserID=41900668-00C1-4805-8EA7-643EE7CB9BE9&method=GETDATASETLIST&
-  // API Key: 41900668-00C1-4805-8EA7-643EE7CB9BE9
-  // National Data, National Income and Product Accounts, = Table 3.16. Government Current Expenditures by Function
-  // https://apps.bea.gov/api/data/?&UserID=41900668-00C1-4805-8EA7-643EE7CB9BE9&method=getdata&frequency=a&year=2017&tablename=t31600&datasetname=nipa
-  // The above call requires a Year, a frequency (Annual, Monthly, Quartly), the table name, the data set, the method, and our apikey.
-  // response.BEAAPI.Results.Data
-  // TODO - Determine how to see what is a subcategory of what.
-  function logBEA() {
-    $.ajax({
-      url: `https://apps.bea.gov/api/data/?&UserID=41900668-00C1-4805-8EA7-643EE7CB9BE9&method=getdata&frequency=a&year=2017&tablename=t31600&datasetname=nipa`,
-      method: "GET"
-    }).then(function (response) {
-      debugger;
-      console.log(response.BEAAPI.Results.Data);
-    });
-  }
-
-
-  // firebase
-  var config = {
->>>>>>> 18c6a8f9f6253048f29614e951c64ec21c8822d5
     apiKey: "AIzaSyA_OTRPTqH6qlBHv6DgxXyZZROR5TYIQoc",
     authDomain: "team-project-6fc1b.firebaseapp.com",
     databaseURL: "https://team-project-6fc1b.firebaseio.com",
@@ -107,6 +80,15 @@ var config = {
 
 // empty modal  
   
+
+
+function sliderOutput() {
+  const val = $('#slider2').val();
+  $("#slider2output").html(val);
+};
+
+sliderOutput();
+
 
 
 
@@ -154,7 +136,6 @@ $("#submit").on("click", function (e) {
 
   }); //end submit on click
 
-<<<<<<< HEAD
   function writeUserData(user) {
     database.ref('users/' + user.firstName).set(  //user.firstname on this line is an ID for the data
       user
@@ -163,11 +144,6 @@ $("#submit").on("click", function (e) {
 
 // need to clear modal data after use
 
-=======
-  
-  // Remove tooltips:
-  // tooltipSlider.noUiSlider.removeTooltips();
->>>>>>> 18c6a8f9f6253048f29614e951c64ec21c8822d5
   //slider
   // var slider2 = document.getElementById("#slider2");
   // var val = document.getElementById("value");
