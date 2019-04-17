@@ -69,7 +69,7 @@
                         <p class="text brown-text text-darken-2">Total</p>
                     </div>
                 </div>
-            </div> -->
+            </div>
 
             <!-- space -->
             <div class="col s1"></div>
@@ -129,8 +129,8 @@
                     <!-- class="activator" -->
                     <div class="card-content">
                         <span class="text card-title activator text brown-text text-darken-2 left">Federal Median Income
-                            Budget</span>
-                        <i class="text brown-text text-darken-2">compare yours</i>
+                            Budget<i class="text brown-text text-darken-2">compare yours</i></span>
+                        
                         <a href="https://wallethacks.com/average-household-spending-budget/"
                             class="text brown-text text-darken-2">Budget
                             Article</a>
@@ -169,11 +169,48 @@
             </div>
 
             <div class="col s12 m6">
-                <div class="card-panel light-green lighten-4">
-                    <!-- <div class="card-panel light-green lighten-4"> -->
-                    <h5 class="text left text brown-text text-darken-2">Georgia Median Income</h5>
-                    <p class="text clearfix text brown-text text-darken-2">$23452345</p>
-                    <!-- ***API DATA ON Median Income in that AREA -->
+                <div class="card light-green lighten-4">
+                    <div class="card-image waves-effect waves-block waves-light">
+                    </div>
+                    <!-- class="activator" -->
+                    <div class="card-content">
+                        <span class="text card-title activator text brown-text text-darken-2 left">Georgia Median Income
+                            Budget<i class="text brown-text text-darken-2">compare yours</i></span>
+                        
+                        <a href="https://wallethacks.com/average-household-spending-budget/"
+                            class="text brown-text text-darken-2">Budget
+                            Article</a>
+                    </div>
+                    <div class="card-reveal light-green lighten-4">
+                        <span class="card-title text brown-text text-darken-2">
+                            <i class="material-icons right">close</i></span>
+                        <div class="container">
+                            <table class="striped centered responsive">
+                                <h5 class="text center brown-text text-darken-2">Median Income Budget</h5>
+                                <thead>
+                                    <tr>
+                                        <th class="text">Expense</th>
+                                        <th class="text">Amount</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td class="text">Alvin</td>
+                                        <td class="text">Eclair</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text">Alvin</td>
+                                        <td class="text">Eclair</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text">Alvin</td>
+                                        <td class="text">Eclair</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -190,7 +227,7 @@
     <!-- table structure -->
     <!-- you add new colums by adding <thead><tr><th>(each table head) tag -->
     <div class="container">
-        <table class="striped centered responsive" id="table1">
+        <table class="striped centered responsive">
             <h2 class="text center">comparison of recent user data</h2>
             <thead id="tableHeader">
                 <tr>
@@ -201,6 +238,10 @@
                     <th class="text">My Estimated Fed Income Tax</th>
                 </tr>
             </thead>
+
+            <tbody id="table1">
+                <!--inserting the firebase data, creating new <tr><td>-->
+            </tbody>
 
     
 
