@@ -154,7 +154,7 @@ $("#submit").on("click", function (e) {
   function addChildToTable(snapshot) {
     // $("#table1").append(snapshot.val().firstName + " | " + snapshot.val().income + " | " + snapshot.val().state);
     $("#table1").append('<tr>' + '<td>' + snapshot.val().firstName + '</td>' + '<td>' + snapshot.val().state + '</td>' + '<td>' + snapshot.val().income + '</td>' + '</tr>');
-    debugger;
+    // debugger;
   }
 
   //Event listener for the child added event in the database 'users' scope
@@ -180,11 +180,6 @@ $("#submit").on("click", function (e) {
 
 }); //end document
 
-
-
-
-
-}); //end document
 
 //sliderOutput
 function sliderOutput() {

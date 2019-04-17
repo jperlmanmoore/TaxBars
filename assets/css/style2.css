@@ -1,9 +1,14 @@
 body {
-    background-color: rgb(248, 245, 245);
+    background-color: rgb(241, 238, 235);
     display: flex;
     min-height: 100vh;
     flex-direction: column;
 }
+/* 
+a, ul {
+   position: relative;
+   top: 35px;
+} */
 
 .navbartext {
     /* font-family: 'Montserrat', sans-serif; */
@@ -29,6 +34,10 @@ body {
     /* font-family: 'Quattrocento Sans', sans-serif; */
     /* font-weight: bolder; */
     }
+
+.modalmargin2 {
+   position: relative;
+}
 
 
 .slidercontainer {
@@ -83,3 +92,4 @@ i {
 h4 {
     margin-bottom: 25px;
 }
+
