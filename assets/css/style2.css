@@ -65,7 +65,10 @@ main {
 .thumb{
     top:10px !important;
 }
-/* end slider */
+
+output {
+    display: inline;
+}
 
 /* #sliderlabel {
     margin-top: 60px;

@@ -123,21 +123,13 @@ $("#submit").on("click", function (e) {
 
   }); //end submit on click
 
-  function writeUserData(user) {
-    database.ref('users/' + user.firstName).set(  //user.firstname on this line is an ID for the data
-      user
-    );
-  }; //end write user data
+  function sliderOutput() {
+    const val = $('#slider2').val();
+    $("#slider2output").html(val);
+  };
 
-// need to clear modal data after use
+  sliderOutput();
 
-  //slider
-  // var slider2 = document.getElementById("#slider2");
-  // var val = document.getElementById("value");
-  // val.innerHTML = slider2.value;
-  // slider2.oninput = function() {
-  //     val.innerHTML=this.value;
-  // };
 
   //source = https://wallethacks.com/average-household-spending-budget/
   function populateTable(income) {
@@ -148,10 +140,45 @@ $("#submit").on("click", function (e) {
     const entertainment = 5.33;
   };
 
+
+
+  function writeUserData(user) {
+    database.ref('users/' + user.firstName).set(  //user.firstname on this line is an ID for the data
+      user
+    );
+  }; //end write user data
+
+  //create user table 
+  function addChildToTable(snapshot) {
+    // $("#table1").append(snapshot.val().firstName + " | " + snapshot.val().income + " | " + snapshot.val().state);
+    $("#table1").append('<tr>' + '<td>' + snapshot.val().firstName + '</td>' + '<td>' + snapshot.val().state + '</td>' + '<td>' + snapshot.val().income + '</td>' + '</tr>');
+    debugger;
+  }
+
+  //Event listener for the child added event in the database 'users' scope
+  database.ref('users').on("child_added", function (childSnapshot, prevChildKey) {
+    console.log(childSnapshot.val());
+    addChildToTable(childSnapshot);
+  })
+  // *end user table
+
+
+
   //document ready functions
-    M.updateTextFields();
-    $('.modal').modal();
-    fetchTaxeeData();
-    fetchGeorgiaMedianIncome();
+  // $(document).ready(function () {
+  M.updateTextFields();
+  $('.modal').modal();
+  fetchTaxeeData();
+  fetchGeorgiaMedianIncome();
+  // });
+
+
+
+
 
 }); //end document
+
+
+
+
+
