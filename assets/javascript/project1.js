@@ -150,23 +150,10 @@ $(function () {
     );
   }; //end write user data
 
-  // HS -- to write the Firebase data to the end table. Tried two different ways but neither seem to do the trick.
-  //var database = firebase.database();
-  //database.ref().once('value', function(snapshot){
-  // database.ref().once('value', function(snapshot){
-  //       var content = '';
-  //       snapshot.forEach(function(data){
-  //           var val = data.val();
-  //           content +='<tr>';
-  //           content += '<td>' + user.firstName + '</td>';
-  //           content += '<td>' + user.income + '</td>';
-  //           content += '<td>' + user.state + '</td>';
-  //       });
-  //       $('#tableRow').append(content);
-  //     });
-
+  //create user table 
   function addChildToTable(snapshot) {
-    $("#table1").append(snapshot.val().firstName + " | " + snapshot.val().income + " | " + snapshot.val().state);
+    // $("#table1").append(snapshot.val().firstName + " | " + snapshot.val().income + " | " + snapshot.val().state);
+    $("#table1").append('<tr>' + '<td>' + snapshot.val().firstName + '</td>' + '<td>' + snapshot.val().state + '</td>' + '<td>' + snapshot.val().income + '</td>' + '</tr>');
     debugger;
   }
 
@@ -175,20 +162,9 @@ $(function () {
     console.log(childSnapshot.val());
     addChildToTable(childSnapshot);
   })
+  // *end user table
 
 
-  //   function populateFBTable(data, key) {
-  //     var html = '';
-  //     html += '<tr>';
-  //     $.each(data, function (key, value) {
-  //       html += '<td>' + value + '</td>';
-  //     });
-  //     html += // HS - stuck on this part for Firebase table to populate
-  //       html += '</tr>';
-
-  //     $('#tableRow').append(html);
-  //   }
-  //  // end of the bottom table
 
   //document ready functions
   // $(document).ready(function () {
