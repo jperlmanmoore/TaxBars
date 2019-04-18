@@ -241,11 +241,10 @@ $(function () {
   M.updateTextFields();
   $('.modal').modal();
   fetchTaxeeData();
-  fetchGeorgiaMedianIncome();
-  $('.dropdown-trigger').dropdown({
-    hover: true
-  });
+  // fetchGeorgiaMedianIncome();
+  // $('.dropdown-trigger').dropdown({
+  //   hover: true
+  // });
   $('input#income').characterCounter();
   $('select').formSelect();
-  // $('.collapsible').collapsible();
 }); //end document
