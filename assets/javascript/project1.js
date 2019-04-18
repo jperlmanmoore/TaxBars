@@ -27,7 +27,7 @@ function submitUserToDataBase() {
     user.firstName = tmp;
   }
 
-  tmp = $("#state").val().trim();
+  tmp = $('.dropdown2').formSelect('getSelectedValues');
 
   if (tmp != "") {
     user.state = tmp;
@@ -43,6 +43,7 @@ function submitUserToDataBase() {
   writeUserData(user);
 
   $("input").val("");
+  
 }
 
 ////////// APIs //////////
@@ -226,8 +227,6 @@ function userEntry(e) {
 
 }
 
-
-
 //document ready functions
 $(function () {
   $("#submit").on("click", userEntry);
@@ -242,9 +241,11 @@ $(function () {
   M.updateTextFields();
   $('.modal').modal();
   fetchTaxeeData();
-  fetchGeorgiaMedianIncome();
+  // fetchGeorgiaMedianIncome();
   $('.dropdown-trigger').dropdown({
     hover: true
   });
+  
+  $('select').formSelect();
   $('.collapsible').collapsible();
 }); //end document
