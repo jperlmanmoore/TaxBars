@@ -30,6 +30,9 @@ body {
     /* font-weight: bolder; */
     }
 
+#dropdown1 {
+    text-align: left !important;
+}
 
 .slidercontainer {
     height: 2px;
@@ -56,8 +59,6 @@ main {
     font-size: 50px;
 } 
 
-
-
 .slider{
     height: 25px;
 }
@@ -82,4 +83,8 @@ i {
 
 h4 {
     margin-bottom: 25px;
+}
+
+a {
+    color: #52361b !important;
 }

@@ -163,6 +163,8 @@ function userEntry(e) {
   $("#fedTaxEstimate").text(`Estimated fed income tax: $${estimate}`);
 }
 
+
+
 //document ready functions
 $(function () {
   $("#submit").on("click", userEntry);
@@ -173,9 +175,12 @@ $(function () {
     addChildToTable(childSnapshot);
   });
 
+
   M.updateTextFields();
   $('.modal').modal();
   fetchTaxeeData();
   fetchGeorgiaMedianIncome();
-  $('.collapsible').collapsible();
+  $('.dropdown-trigger').dropdown({
+    hover: true
+  });
 }); //end document

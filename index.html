@@ -58,7 +58,7 @@
                     <p id="budget"></p>
                     <p id="fedTaxEstimate"></p>
 
-                    <div class="container" >
+                    <div class="container">
                         <form id="sliderArea">
                             <!-- <input type="range" value="200" step="1" class="slider" id="slider2" min="0" max="200"
                                 name="weight" oninput="sliderOutput()">
@@ -87,54 +87,122 @@
                             href="#modal1"> enter your information </a>
                         <div id="modal1" class="modal">
                             <div class="modal-content">
-                                <h4 class="text brown-text text-darken-2 text">Something</h4>
+                                <h4 class="text brown-text text-darken-2 text">Your Information</h4>
                                 <!-- form structure -->
+
                                 <div class="row">
-                                    <form id="modalForm" class="col s12">
+                                    <form name="userForm" id="modalForm" class="col s12">
                                         <div class="row">
                                             <div class="input-field col s12">
                                                 <input placeholder="enter any name your want" id="first_name"
-                                                    type="text" class="validate text brown-text text-darken-2" required>
+                                                    type="text" class="validate text brown-text text-darken-2">
                                                 <label for="name" class="text brown-text text-darken-2">first
                                                     name</label>
                                             </div>
                                         </div>
+                                        
                                         <div class="row">
                                             <div class="input-field col s12">
-                                                <input placeholder="your dream GA address" id="state" type="text"
-                                                    class="validate" required>
-                                                <label for="address"
-                                                    class="text brown-text text-darken-2">address</label>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input placeholder="enter your dream income" id="income" type="number"
-                                                    class="validate" required>
+                                                <input placeholder="enter your dream income" id="income" type="number">
                                                 <label for="income" class="text text brown-text text-darken-2">annual
                                                     income</label>
                                             </div>
                                         </div>
+
+                                        <div class="row left-align">
+                                                <a class='dropdown-trigger btn left-align light-green lighten-2' id="dropdown2" href='#' data-target='dropdown1'>Drop Me!</a>
+                                                <ul id='dropdown1' class='dropdown-content left'>
+                                                        <li><a href="#!">AL</a></li>
+                                                        <li><a href="#!">AK</a></li>
+                                                        <li><a href="#!">AZ</a></li>
+                                                        <li><a href="#!">AR</a></li>
+                                                        <li><a href="#!">CA</a></li>
+                                                        <li><a href="#!">CO</a></li>
+                                                        <li><a href="#!">CT</a></li>
+                                                        <li><a href="#!">DE</a></li>
+                                                        <li><a href="#!">FL</a></li>
+                                                        <li><a href="#!">GA</a></li>
+                                                        <li><a href="#!">HI</a></li>
+                                                        <li><a href="#!">ID</a></li>
+                                                        <li><a href="#!">IL</a></li>
+                                                        <li><a href="#!">IN</a></li>
+                                                        <li><a href="#!">IA</a></li>
+                                                        <li><a href="#!">KS</a></li>
+                                                        <li><a href="#!">KY</a></li>
+                                                        <li><a href="#!">LA</a></li>
+                                                        <li><a href="#!">ME</a></li>
+                                                        <li><a href="#!">MD</a></li>
+                                                        <li><a href="#!">MA</a></li>
+                                                        <li><a href="#!">MI</a></li>
+                                                        <li><a href="#!">MN</a></li>
+                                                        <li><a href="#!">MS</a></li>
+                                                        <li><a href="#!">MO</a></li>
+                                                        <li><a href="#!">MT</a></li>
+                                                        <li><a href="#!">NE</a></li>
+                                                        <li><a href="#!">NV</a></li>
+                                                        <li><a href="#!">NH</a></li>
+                                                        <li><a href="#!">NJ</a></li>
+                                                        <li><a href="#!">NM</a></li>
+                                                        <li><a href="#!">NY</a></li>
+                                                        <li><a href="#!">NC</a></li>
+                                                        <li><a href="#!">ND</a></li>
+                                                        <li><a href="#!">OH</a></li>
+                                                        <li><a href="#!">OK</a></li>
+                                                        <li><a href="#!">OR</a></li>
+                                                        <li><a href="#!">PA</a></li>
+                                                        <li><a href="#!">RI</a></li>
+                                                        <li><a href="#!">SC</a></li>
+                                                        <li><a href="#!">SD</a></li>
+                                                        <li><a href="#!">TN</a></li>
+                                                        <li><a href="#!">TX</a></li>
+                                                        <li><a href="#!">UT</a></li>
+                                                        <li><a href="#!">VT</a></li>
+                                                        <li><a href="#!">VA</a></li>
+                                                        <li><a href="#!">WA</a></li>
+                                                        <li><a href="#!">WV</a></li>
+                                                        <li><a href="#!">WI</a></li>
+                                                        <li><a href="#!">WY</a></li>
+                                                        <li><a href="#!">AS</a></li>
+                                                        <li><a href="#!">DC</a></li>
+                                                        <li><a href="#!">FM</a></li>
+                                                        <li><a href="#!">GU</a></li>
+                                                        <li><a href="#!">MH</a></li>
+                                                        <li><a href="#!">MP</a></li>
+                                                        <li><a href="#!">PW</a></li>
+                                                        <li><a href="#!">PR</a></li>
+                                                        <li><a href="#!">VI</a></li>
+                                                    </ul>
+                                                </div>
+
+
                                     </form>
                                 </div>
-                            </div>
-                            <div class="modal-footer">
-                                <a href="#!" id="submit"
-                                    class="modal-close waves-effect waves-light btn-flat text text brown-text text-darken-2">Submit</a>
+
+                                <!-- Dropdown Structure -->
+                                
+
+
+
+                                <div class="modal-footer">
+                                    <a href="#!" id="submit"
+                                        class="modal-close waves-effect waves-light btn-flat text text brown-text text-darken-2">Submit</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col s12 m6">
+
+
+                <div class="col s12 m6">
                     <div class="card light-green lighten-5">
                         <div class="card-image waves-effect waves-block waves-light">
                         </div>
                         <!-- class="activator" -->
                         <div class="card-content">
-                            <span class="card-title text brown-text text-darken-2 centered">Federal Median Income
+                            <span class="card-title text brown-text text-darken-2 center">Federal Median Income
                                 Budget</span>
-                            <p class="text brown-text text-darken-2 center">Say something here, it can be whatever you like
+                            <p class="text brown-text text-darken-2 center">Say something here, it can be whatever you
+                                like
                                 to put
                                 here.</p>
                         </div>
@@ -143,7 +211,7 @@
                                 href="#modal2"> view </a>
                             <div id="modal2" class="modal">
                                 <div class="modal-content">
-    
+
                                     <!-- form structure -->
                                     <div class="row">
                                         <table class="striped centered responsive">
@@ -155,7 +223,7 @@
                                                     <th class="text">Amount</th>
                                                 </tr>
                                             </thead>
-    
+
                                             <tbody>
                                                 <tr>
                                                     <td class="text">Alvin</td>
@@ -177,8 +245,8 @@
                         </div>
                     </div>
                 </div>
-    
-    
+
+
                 <div class="col s12 m6">
                     <div class="card light-green lighten-5">
                         <div class="card-image waves-effect waves-block waves-light">
@@ -187,7 +255,8 @@
                         <div class="card-content">
                             <span class="card-title text brown-text text-darken-2 center">State Median Income
                                 Budget</span>
-                            <p class="text brown-text text-darken-2 center">Say something here, it can be whatever you like
+                            <p class="text brown-text text-darken-2 center">Say something here, it can be whatever you
+                                like
                                 to put
                                 here.</p>
                         </div>
@@ -196,7 +265,7 @@
                                 href="#modal3"> view </a>
                             <div id="modal3" class="modal">
                                 <div class="modal-content">
-    
+
                                     <!-- form structure -->
                                     <div class="row">
                                         <table class="striped centered responsive">
@@ -208,7 +277,7 @@
                                                     <th class="text">Amount</th>
                                                 </tr>
                                             </thead>
-    
+
                                             <tbody>
                                                 <tr>
                                                     <td class="text">Alvin</td>
@@ -230,8 +299,8 @@
                         </div>
                     </div>
                 </div>
-    
-    
+
+
                 <div class="col s12 m6">
                     <div class="card light-green lighten-4">
                         <div class="card-image waves-effect waves-block waves-light">
@@ -240,7 +309,8 @@
                         <div class="card-content">
                             <span class="card-title text brown-text text-darken-2 center">My Comparison
                                 Budget</span>
-                            <p class="text brown-text text-darken-2 center">Say something here, it can be whatever you like
+                            <p class="text brown-text text-darken-2 center">Say something here, it can be whatever you
+                                like
                                 to put
                                 here.</p>
                         </div>
@@ -249,7 +319,7 @@
                                 href="#modal4"> view </a>
                             <div id="modal4" class="modal">
                                 <div class="modal-content">
-    
+
                                     <!-- form structure -->
                                     <div class="row">
                                         <table class="striped centered responsive">
@@ -260,7 +330,7 @@
                                                     <th class="text">Amount</th>
                                                 </tr>
                                             </thead>
-    
+
                                             <tbody>
                                                 <tr>
                                                     <td class="text">Alvin</td>
@@ -285,27 +355,27 @@
             </div>
         </div>
 
-    <!-- table structure -->
-    <!-- you add new colums by adding <thead><tr><th>(each table head) tag -->
-    <div class="container">
-        <table class="striped centered responsive">
-            <h2 class="text center brown-text darken-2">comparison of recent user data</h2>
-            <thead id="tableHeader">
-                <tr>
-                    <th class="text">Name</th>
-                    <th class="text">State</th>
-                    <th class="text">My Income</th>
-                    <th class="text">My Estimated Fed Income Tax</th>
-                </tr>
-            </thead>
+        <!-- table structure -->
+        <!-- you add new colums by adding <thead><tr><th>(each table head) tag -->
+        <div class="container">
+            <table class="striped centered responsive">
+                <h2 class="text center brown-text darken-2">comparison of recent user data</h2>
+                <thead id="tableHeader">
+                    <tr>
+                        <th class="text">Name</th>
+                        <th class="text">State</th>
+                        <th class="text">My Income</th>
+                        <th class="text">My Estimated Fed Income Tax</th>
+                    </tr>
+                </thead>
 
-            <tbody id="table1">
-                <!--inserting the firebase data, creating new <tr><td>-->
-            </tbody>
+                <tbody id="table1">
+                    <!--inserting the firebase data, creating new <tr><td>-->
+                </tbody>
 
 
 
-            <!-- <tbody>
+                <!-- <tbody>
                 <tr id="tableRow">
                     <td class="text">Alvin</td>
                     <td class="text">Eclair</td>
@@ -331,49 +401,53 @@
 
                 </tr>
             </tbody> -->
-        </table>
-    </div>
+            </table>
+        </div>
 
-    <br>
+        <br>
 
-    <footer class="page-footer light-green lighten-4">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="text brown-text text-darken-2">Budget Bootcamp</h5>
-                    <p class="text brown-text text-darken-2">Budget Bootcamp was established in 2019, in Atlanta, GA and
-                        founded by
-                        amazing students in the GA Tech coding Bootcamp. </p>
-                </div>
-                <div class="col l4 offset-l2 s12">
-                    <h5 class="text brown-text text-darken-2">More info</h5>
-                    <ul>
-                        <li><a class="text brown-text text-darken-2"
-                                href="https://www.consumer.gov/articles/1002-making-budget">How to
-                                Make a Budget</a></li>
-                    </ul>
+        <footer class="page-footer light-green lighten-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="text brown-text text-darken-2">Budget Bootcamp</h5>
+                        <p class="text brown-text text-darken-2">Budget Bootcamp was established in 2019, in Atlanta, GA
+                            and
+                            founded by
+                            amazing students in the GA Tech coding Bootcamp. </p>
+                    </div>
+                    <div class="col l4 offset-l2 s12">
+                        <h5 class="text brown-text text-darken-2">More info</h5>
+                        <ul>
+                            <li><a class="text brown-text text-darken-2"
+                                    href="https://www.consumer.gov/articles/1002-making-budget">How to
+                                    Make a Budget</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="footer-copyright">
-            <div class="container center">
-                © 2019 Bootcamp Project1 Team1
+            <div class="footer-copyright">
+                <div class="container center">
+                    © 2019 Bootcamp Project1 Team1
+                </div>
             </div>
-        </div>
-    </footer>
+        </footer>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
-    <!-- <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-app.js"></script>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script sec="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/additional-methods.js"></script>
+        <script src="js/form-validation.js"></script>
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+        <!-- <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-database.js"></script> -->
 
 
-    <script src="assets/javascript/project1.js"></script>
+        <script src="assets/javascript/project1.js"></script>
 
 </body>
 
