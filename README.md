@@ -1,9 +1,9 @@
-# TaxBars
+# BudgetBootcamp
 A resource planning system
 
 ## Getting Started
 
-Click on any Button to see images.  You can add new buttons.   You can click on gifs to start/stop them.
+Click "Enter your Information" to get started.  Adjust your bars however you like.
 
 ### Prerequisites
 
@@ -32,7 +32,6 @@ N/A
 ## Built With
 
 * [Materialize CSS](https://materializecss.com/) - A toolkit used.
-* [Giphy] (https://giphy.com/) - The source of the gifs.
 
 ## Contributing
 
@@ -54,4 +53,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 * Thanks to Stanley, Adam, Meguel, Matthew, and Lauren for answering questions in class.
-* This product uses the Bureau of Economic Analysis (BEA) Data API but is not endorsed or certified by BEA.
+* This project uses Census Data (https://www.census.gov/)
+* This project using the Taxee API (https://taxee.io/)
