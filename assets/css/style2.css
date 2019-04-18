@@ -93,3 +93,11 @@ h4 {
     margin-bottom: 25px;
 }
 
+.collapsible {
+    position: absolute;
+    top: 0px;
+    left: 500px;
+    max-height: 25px;
+}
+
+

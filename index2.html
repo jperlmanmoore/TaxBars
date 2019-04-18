@@ -21,283 +21,23 @@
     <nav class="light-green lighten-3 navbarbkgrnd">
         <div class="nav-wrapper">
             <a class="navbrand-logo brown-text text-darken-2 navbartext">Budget Bootcamp</a>
-            <ul class="right hide-on-med-and-down">
-                <li id="login" class="btn btn-flat light-green lighten-3"><a
-                        class="light-green lighten-3 text brown-text right" href="login.html">Login</a></li>
-                <li id="signup" class="btn btn-flat light-green lighten-3"><a
-                        class="light-green lighten-3 text brown-text right" href="signup.html">Signup</a></li>
-                <li id="about" class="btn btn-flat light-green lighten-3"><a
-                        class="light-green lighten-3 text brown-text right" href="about.html">About</a></li>
-                <li id="contact" class="btn btn-flat light-green lighten-3"><a
-                        class="light-green lighten-3 text brown-text right" href="contact.html">Contact</a></li>
-            </ul>
+            <ul class="collapsible popout light-blue">
+                <li>
+                  <div class="collapsible-header light-blue text">Login</div>
+                  <div class="collapsible-body light-blue text">test</div>
+                </li>
+                <li>
+                  <div class="collapsible-header light-blue text"></div>
+                  <div class="collapsible-body light-blue text"></div>
+                </li>
+                <li>
+                  <div class="collapsible-header light-blue text"></div>
+                  <div class="collapsible-body light-blue text"></div>
+                </li>
+              </ul>
+                    
         </div>
     </nav>
-
-
-<!-- Dropdown Trigger -->
-<a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
-
-<!-- Dropdown Structure -->
-<ul id='dropdown1' class='dropdown-content'>
-        <li><a href="#!">AL</a></li>
-        <li><a href="#!">AK</a></li>
-        <li><a href="#!">AZ</a></li>
-        <li><a href="#!">AR</a></li>
-        <li><a href="#!">CA</a></li>
-        <li><a href="#!">CO</a></li>
-        <li><a href="#!">CT</a></li>
-        <li><a href="#!">DE</a></li>
-        <li><a href="#!">FL</a></li>
-        <li><a href="#!">GA</a></li>
-        <li><a href="#!">HI</a></li>
-        <li><a href="#!">ID</a></li>
-        <li><a href="#!">IL</a></li>
-        <li><a href="#!">IN</a></li>
-        <li><a href="#!">IA</a></li>
-        <li><a href="#!">KS</a></li>
-        <li><a href="#!">KY</a></li>
-        <li><a href="#!">LA</a></li>
-        <li><a href="#!">ME</a></li>
-        <li><a href="#!">MD</a></li>
-        <li><a href="#!">MA</a></li>
-        <li><a href="#!">MI</a></li>
-        <li><a href="#!">MN</a></li>
-        <li><a href="#!">MS</a></li>
-        <li><a href="#!">MO</a></li>
-        <li><a href="#!">MT</a></li>
-        <li><a href="#!">NE</a></li>
-        <li><a href="#!">NV</a></li>
-        <li><a href="#!">NH</a></li>
-        <li><a href="#!">NJ</a></li>
-        <li><a href="#!">NM</a></li>
-        <li><a href="#!">NY</a></li>
-        <li><a href="#!">NC</a></li>
-        <li><a href="#!">ND</a></li>
-        <li><a href="#!">OH</a></li>
-        <li><a href="#!">OK</a></li>
-        <li><a href="#!">OR</a></li>
-        <li><a href="#!">PA</a></li>
-        <li><a href="#!">RI</a></li>
-        <li><a href="#!">SC</a></li>
-        <li><a href="#!">SD</a></li>
-        <li><a href="#!">TN</a></li>
-        <li><a href="#!">TX</a></li>
-        <li><a href="#!">UT</a></li>
-        <li><a href="#!">VT</a></li>
-        <li><a href="#!">VA</a></li>
-        <li><a href="#!">WA</a></li>
-        <li><a href="#!">WV</a></li>
-        <li><a href="#!">WI</a></li>
-        <li><a href="#!">WY</a></li>
-        <li><a href="#!">AS</a></li>
-        <li><a href="#!">DC</a></li>
-        <li><a href="#!">FM</a></li>
-        <li><a href="#!">GU</a></li>
-        <li><a href="#!">MH</a></li>
-        <li><a href="#!">MP</a></li>
-        <li><a href="#!">PW</a></li>
-        <li><a href="#!">PR</a></li>
-        <li><a href="#!">VI</a></li>  
-</ul>
-      
-
-
-
-
-
-<div class="container">
-            <div class="row">
-                <!-- sliders -->
-                <div class="col s12 m6">
-                    <div class="card light-green lighten-4 text center">
-                        <div class="card-image">
-                            <img src="assets/images/money-2724241_1920.2.jpg">
-                            <span class="card-title white-text">
-                                <h3 class="textcardtitle">My Budget</h3>
-                            </span>
-                        </div>
-                        <p class="text brown-text text-darken-2">initial budget based on federal median income</p>
-                        <br>
-                        <p id="budget"></p>
-                        <p id="fedTaxEstimate"></p>
-    
-                        <div class="container" >
-                            <form id="sliderArea">
-                                <!-- <input type="range" value="200" step="1" class="slider" id="slider2" min="0" max="200"
-                                    name="weight" oninput="sliderOutput()">
-                                <output id="slider2output"></output>
-                                    <input type="range" value="200" step="1" class="slider" id="slider3" min="0" max="200"
-                                        name="weight" oninput="sliderOutput()">
-                                    <output id="slider2output2">100</output> -->
-                            </form>
-                        </div>
-    
-    
-                        <div class="card-action">
-                            <p class="text brown-text text-darken-2">Total</p>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- space -->
-                <div class="col s1"></div>
-    
-                <!-- modal -->
-                <div class="containter">
-                    <div class="col s12 m6">
-                        <div class="modalmargin center-align">
-                            <a class="waves-effect waves-light white btn light-green lighten-3 modal-trigger text brown-text text-darken-2 text"
-                                href="#modal1"> enter your information </a>
-                            <div id="modal1" class="modal">
-                                <div class="modal-content">
-                                    <h4 class="text brown-text text-darken-2 text">Something</h4>
-                                    <!-- form structure -->
-                                    <div class="row">
-                                        <form id="modalForm" class="col s12">
-                                            <div class="row">
-                                                <div class="input-field col s12">
-                                                    <input placeholder="enter any name your want" id="first_name"
-                                                        type="text" class="validate text brown-text text-darken-2" required>
-                                                    <label for="name" class="text brown-text text-darken-2">first
-                                                        name</label>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="input-field col s12">
-                                                    <input placeholder="your dream GA address" id="state" type="text"
-                                                        class="validate" required>
-                                                    <label for="address"
-                                                        class="text brown-text text-darken-2">address</label>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="input-field col s12">
-                                                    <input placeholder="enter your dream income" id="income" type="number"
-                                                        class="validate" required>
-                                                    <label for="income" class="text text brown-text text-darken-2">annual
-                                                        income</label>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <a href="#!" id="submit"
-                                        class="modal-close waves-effect waves-light btn-flat text text brown-text text-darken-2">Submit</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-    <div class="row">
-        <div class="col s12 m6">
-            <ul class="collapsible">
-                <li>
-                    <div class="collapsible-header light-green lighten-4 text brown-text text-darken-2">Federal Median
-                        Income Budget</div>
-                    <div class="collapsible-body light-green lighten-5">
-                        <span>
-                            <div class="row">
-                                <table class="striped centered responsive light-green lighten-4">
-                                    <thead>
-                                        <tr>
-                                            <th class="text">Expense</th>
-                                            <th class="text">Amount</th>
-                                        </tr>
-                                    </thead>
-
-                                    <tbody>
-                                        <tr>
-                                            <td class="text">Alvin</td>
-                                            <td class="text">Eclair</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text">Alvin</td>
-                                            <td class="text">Eclair</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text">Alvin</td>
-                                            <td class="text">Eclair</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </span>
-                    </div>
-                </li>
-                <li>
-                    <div class="collapsible-header light-green lighten-4 text brown-text text-darken-2">State Median
-                        Income Budget</div>
-                    <div class="collapsible-body light-green lighten-5">
-                        <span>
-                            <div class="row">
-                                <table class="striped centered responsive light-green lighten-4">
-                                    <thead>
-                                        <tr>
-                                            <th class="text">Expense</th>
-                                            <th class="text">Amount</th>
-                                        </tr>
-                                    </thead>
-
-                                    <tbody>
-                                        <tr>
-                                            <td class="text">Alvin</td>
-                                            <td class="text">Eclair</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text">Alvin</td>
-                                            <td class="text">Eclair</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text">Alvin</td>
-                                            <td class="text">Eclair</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </span>
-                    </div>
-                </li>
-                <li>
-                    <div class="collapsible-header light-green lighten-4 text brown-text text-darken-2">State Median
-                        Income Budget</div>
-                    <div class="collapsible-body light-green lighten-5">
-                        <span>
-                            <div class="row">
-                                <table class="striped centered responsive light-green lighten-4">
-                                    <thead>
-                                        <tr>
-                                            <th class="text">Expense</th>
-                                            <th class="text">Amount</th>
-                                        </tr>
-                                    </thead>
-
-                                    <tbody>
-                                        <tr>
-                                            <td class="text">Alvin</td>
-                                            <td class="text">Eclair</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text">Alvin</td>
-                                            <td class="text">Eclair</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text">Alvin</td>
-                                            <td class="text">Eclair</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </span>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
 
 
 
@@ -340,8 +80,6 @@
     <!-- <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-database.js"></script> -->
-
-
     <script src="assets/javascript/project1.js"></script>
 
 </body>

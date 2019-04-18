@@ -5,6 +5,10 @@ body {
     flex-direction: column;
 }
 
+main {
+    flex: 1 0 auto;
+  }
+
 .navbartext {
     /* font-family: 'Montserrat', sans-serif; */
     font-family: 'Raleway', sans-serif;
@@ -30,28 +34,29 @@ body {
     /* font-weight: bolder; */
     }
 
-#dropdown1 {
-    text-align: left !important;
+.input-field {
+    color: #52361b;
 }
+
+#selectstate, .select-dropdown {
+    left: -.10rem !important;
+    font-size: 15px;
+}
+
+/* #name, #income {
+    font-size: 15px;
+} */
 
 .slidercontainer {
     height: 2px;
 }
 
-    output {
-        display: inline;
-    }
-.loginsignup {
-    margin: 5px;
-    margin-top: 50px;
+output {
+   display: inline;
 }
 
 .modalmargin {
     margin-bottom: 15px;
-}
-
-main {
-    flex: 1 0 auto;
 }
 
 .navbarheight, .navbarbkgrnd {
@@ -89,6 +94,7 @@ a {
     color: #52361b !important;
 }
 
-.selectlabel {
-    padding: 0px !important;
+#login, #signup, #about, #contact {
+    margin-left: -10px;
+    margin-top: 40px;
 }
