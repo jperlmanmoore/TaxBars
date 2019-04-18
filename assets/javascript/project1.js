@@ -95,7 +95,7 @@ function fetchTaxeeData() {
 // Data format - Contains an array of requests, then an array of responses.
 // The first value in the response is our desired value: S1901_C04_012E, Nonfamily households!!Estimate!!Median income (dollars)
 // thus we use: data[1][0]
-const stateCodeLookup =  new Map(
+const stateCodeLookup = new Map(
   [["ALABAMA", 01], ["AL", 01],
   ["ALASKA", 02], ["AK", 02],
   ["ARIZONA", 03], ["AZ", 03],
@@ -185,7 +185,7 @@ function addSlider(value, category) {
   // <input type="range" value="200" step="1" class="slider" id="slider3" min="0" max="200"
   //     name="weight" oninput="sliderOutput()">
   // <output id="slider2output2">100</output>
-  
+
   $("#sliderArea").append(`
       <input type="range" value="${value}" step="1" class="slider" data-cat="${category}" min="0" max="${income}"
         name="weight" oninput="sliderChange(this)">
@@ -193,13 +193,14 @@ function addSlider(value, category) {
   `);
 }
 
+//% of spend in relation to national median income ($$73,573)
 function populateTable() {
-  const food = 12.87;
-  const housing = 33.12;
-  const transportation = 15.94;
-  const healthcare = 8.20;
-  const entertainment = 5.33;
-  const misc = 24.54;
+  const food = 10.5;
+  const housing = 27;
+  const transportation = 13;
+  const healthcare = 6.7;
+  const entertainment = 4.4;
+  const misc = 38.4;
 
   addSlider(Math.round(food * income / 100), "Food");
   addSlider(Math.round(housing * income / 100), "Housing");
@@ -225,6 +226,88 @@ function userEntry(e) {
   $("#fedTaxEstimate").text(`Estimated fed income tax: $${estimate}`);
 
 }
+
+//create dropdown options for state field
+
+const stateArray = [
+  "AL",
+  "AK",
+  "AZ",
+  "AR",
+  "CA",
+  "CO",
+  "CT",
+  "DE",
+  "DC",
+  "FL",
+  "GA",
+  "HI",
+  "ID",
+  "IL",
+  "IN",
+  "IA",
+  "KS",
+  "KY",
+  "LA",
+  "ME",
+  "MD",
+  "MA",
+  "MI",
+  "MN",
+  "MS",
+  "MO",
+  "MT",
+  "NE",
+  "NV",
+  "NH",
+  "NJ",
+  "NM",
+  "NY",
+  "NC",
+  "ND",
+  "OH",
+  "OK",
+  "OR",
+  "PA",
+  "RI",
+  "SC",
+  "SD",
+  "TN",
+  "TX",
+  "UT",
+  "VT",
+  "VA",
+  "WA",
+  "WV",
+  "WI",
+  "WY"]
+
+var select = document.getElementById("state");
+var options = stateArray;
+for (var i = 0; i < options.length; i++) {
+  var opt = options[i];
+  var el = document.createElement("option");
+  el.textContent = opt;
+  el.value = opt;
+  select.appendChild(el);
+}
+
+
+//valdation first letter uppercase on modal input
+
+// function modalCapitalization() {
+//   document.getElementById("first_name").addEventListener("keypress", function (e) {
+//     if (this.selectionStart == 0) {
+//       // uppercase first letter
+//       forceKeyPressUppercase(e);
+//     } else {
+//       // lowercase other letters
+//       forceKeyPressLowercase(e);
+//     }
+//   }, false);
+// }
+
+// modalCapitalization();
 
 //document ready functions
 $(function () {
