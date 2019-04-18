@@ -89,22 +89,77 @@ function fetchTaxeeData() {
 
 // Census
 // apKey: 5431a0d93dfd0097df1f5e372a56adc1513cfd5b
-// Geography level will be us (&for=us:1) or Georgia state (&for=state:13)
-// https://api.census.gov/data/2017/acs/acs1/subject?get=S1901_C04_012E&for=state:13&key=5431a0d93dfd0097df1f5e372a56adc1513cfd5b
+// Geography level will be us (&for=us:1) or Georgia state (&for=state:11)
+// https://api.census.gov/data/2017/acs/acs1/subject?get=S1901_C04_012E&for=state:11&key=5431a0d93dfd0097df1f5e372a56adc1513cfd5b
 // S1901_C04_012E, Nonfamily households!!Estimate!!Median income (dollars)
 // Data format - Contains an array of requests, then an array of responses.
 // The first value in the response is our desired value: S1901_C04_012E, Nonfamily households!!Estimate!!Median income (dollars)
 // thus we use: data[1][0]
-let gaMedianSingleIncome;
-function fetchGeorgiaMedianIncome() {
-  const queryURL = "https://api.census.gov/data/2017/acs/acs1/subject?get=S1901_C04_012E&for=state:13&key=5431a0d93dfd0097df1f5e372a56adc1513cfd5b";
+const stateCodeLookup =  new Map(
+  [["ALABAMA", 01], ["AL", 01],
+  ["ALASKA", 02], ["AK", 02],
+  ["ARIZONA", 03], ["AZ", 03],
+  ["ARKANSAS", 04], ["AR", 04],
+  ["CALIFORNIA", 05], ["CA", 05],
+  ["COLORADO", 06], ["CO", 06],
+  ["CONNECTICUT", 07], ["CT", 07],
+  ["DELAWARE", 08], ["DE", 08],
+  ["DISTRICT OF COLUMBIA", 09], ["DC", 09],
+  ["FLORIDA", 10], ["FL", 10],
+  ["GEORGIA", 11], ["GA", 11],
+  ["HAWAII", 12], ["HI", 12],
+  ["IDAHO", 13], ["ID", 13],
+  ["ILLINOIS", 14], ["IL", 14],
+  ["INDIANA", 15], ["IN", 15],
+  ["IOWA", 16], ["IA", 16],
+  ["KANSAS", 17], ["KS", 17],
+  ["KENTUCKY", 18], ["KY", 18],
+  ["LOUISIANA", 19], ["LA", 19],
+  ["MAINE", 20], ["ME", 20],
+  ["MARYLAND", 21], ["MD", 21],
+  ["MASSACHUSETTS", 22], ["MA", 22],
+  ["MICHIGAN", 23], ["MI", 23],
+  ["MINNESOTA", 24], ["MN", 24],
+  ["MISSISSIPPI", 25], ["MS", 25],
+  ["MISSOURI", 26], ["MO", 26],
+  ["MONTANA", 27], ["MT", 27],
+  ["NEBRASKA", 28], ["NE", 28],
+  ["NEVADA", 29], ["NV", 29],
+  ["NEW HAMPSHIRE", 30], ["NH", 30],
+  ["NEW JERSEY", 31], ["NJ", 31],
+  ["NEW MEXICO", 32], ["NM", 32],
+  ["NEW YORK", 33], ["NY", 33],
+  ["NORTH CAROLINA", 34], ["NC", 34],
+  ["NORTH DAKOTA", 35], ["ND", 35],
+  ["OHIO", 36], ["OH", 36],
+  ["OKLAHOMA", 37], ["OK", 37],
+  ["OREGON", 38], ["OR", 38],
+  ["PENNSYLVANIA", 39], ["PA", 39],
+  ["RHODE ISLAND", 40], ["RI", 40],
+  ["SOUTH CAROLINA", 41], ["SC", 41],
+  ["SSOUTH DAKOTA", 42], ["SD", 42],
+  ["TENNESSEE", 43], ["TN", 43],
+  ["TEXAS", 44], ["TX", 44],
+  ["UTAH", 45], ["UT", 45],
+  ["VERMONT", 46], ["VT", 46],
+  ["VIRGINIA", 47], ["VA", 47],
+  ["WASHINGTON", 48], ["WA", 48],
+  ["WEST VIRGINIA", 49], ["WV", 49],
+  ["WISCONSIN", 50], ["WI", 50],
+  ["WYOMING", 51], ["WY", 51]]
+);
+
+let stateMedianSingleIncome;
+let stateNumber;
+function fetchStateMedianIncome() {
+  const queryURL = `https://api.census.gov/data/2017/acs/acs1/subject?get=S1901_C04_012E&for=state:${stateNumber}&key=5431a0d93dfd0097df1f5e372a56adc1513cfd5b`;
 
   $.ajax({
     url: queryURL,
     method: "GET"
   }).then(function (data) {
-    gaMedianSingleIncome = data[1][0];
-    $("#gaMedianIncome").text("$" + gaMedianSingleIncome);
+    stateMedianSingleIncome = data[1][0];
+    $("#stateMedianIncome").text("$" + stateMedianSingleIncome);
   });
 }
 
@@ -154,13 +209,21 @@ function populateTable() {
   addSlider(Math.round(misc * income / 100), "Misc");
 }
 
+function parseState() {
+  const userEntry = $("#state").val().trim().toUpperCase();
+  stateNumber = stateCodeLookup.get(userEntry);
+  if (stateNumber === undefined) { stateNumber = "11"; } //Use Georgia if not found in lookup table.
+  fetchStateMedianIncome();
+}
 function userEntry(e) {
   e.preventDefault();
   submitUserToDataBase();
   populateTable();
+  parseState();
   const estimate = getFedTaxes(income);
   $("#budget").text(`Budget: $${income}`)
   $("#fedTaxEstimate").text(`Estimated fed income tax: $${estimate}`);
+
 }
 
 
@@ -183,4 +246,5 @@ $(function () {
   $('.dropdown-trigger').dropdown({
     hover: true
   });
+  $('.collapsible').collapsible();
 }); //end document
