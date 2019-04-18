@@ -53,7 +53,7 @@ function submitUserToDataBase() {
 // data.single, data.married, data.married_separately, head_of_household
 // up.deductions[""0""].deduction_amount
 // up.exemptions[""0""].exemption_amount
-// up.income_tax_brackets[x].ammount (Taxes owed from previous brackets), bracket (ammount this bracket kicks in), marginal_rate (rate within this bracket)
+// up.income_tax_brackets[x].amount (Taxes owed from previous brackets), bracket (amount this bracket kicks in), marginal_rate (rate within this bracket)
 let taxeeFedData;
 let taxeeBracketCount; // Only need to get this once.
 function getFedTaxes(income, filingType = "single") {
@@ -153,14 +153,17 @@ const stateCodeLookup =  new Map(
 let stateMedianSingleIncome;
 let stateNumber;
 function fetchStateMedianIncome() {
-  const queryURL = `https://api.census.gov/data/2017/acs/acs1/subject?get=S1901_C04_012E&for=state:${stateNumber}&key=5431a0d93dfd0097df1f5e372a56adc1513cfd5b`;
+  let leadingZero = (stateNumber < 10) ? "0" : "";
+  const queryURL = `https://api.census.gov/data/2017/acs/acs1/subject?get=S1901_C04_012E&for=state:${leadingZero}${stateNumber}&key=5431a0d93dfd0097df1f5e372a56adc1513cfd5b`;
 
   $.ajax({
     url: queryURL,
     method: "GET"
   }).then(function (data) {
+    debugger;
     stateMedianSingleIncome = data[1][0];
     $("#stateMedianIncome").text("$" + stateMedianSingleIncome);
+    populateStateExpenses(stateMedianSingleIncome);
   });
 }
 
@@ -194,6 +197,42 @@ function addSlider(value, category) {
   `);
 }
 
+function addAreaExpense(parentDom, amount, cat) {
+  parentDom.append(`<tr><td class="text">${cat}</td><td class="text">${amount}</td></tr>`);
+}
+
+function populateFedExpenses() {
+  //$57,652  Census Household data from 2017.
+  const amount = 57652;
+  const food = 12.87;
+  const housing = 33.12;
+  const transportation = 15.94;
+  const healthcare = 8.20;
+  const entertainment = 5.33;
+  const misc = 24.54;
+  addAreaExpense($("#fedExpenses"), Math.round(food * amount / 100), "Food");
+  addAreaExpense($("#fedExpenses"), Math.round(housing * amount / 100), "Housing");
+  addAreaExpense($("#fedExpenses"), Math.round(transportation * amount / 100), "Transportation");
+  addAreaExpense($("#fedExpenses"), Math.round(healthcare * amount / 100), "Healthcare");
+  addAreaExpense($("#fedExpenses"), Math.round(entertainment * amount / 100), "Entertainment");
+  addAreaExpense($("#fedExpenses"), Math.round(misc * amount / 100), "Misc");
+}
+
+function populateStateExpenses(amount) {
+  const food = 12.87;
+  const housing = 33.12;
+  const transportation = 15.94;
+  const healthcare = 8.20;
+  const entertainment = 5.33;
+  const misc = 24.54;
+  addAreaExpense($("#stateExpenses"), Math.round(food * amount / 100), "Food");
+  addAreaExpense($("#stateExpenses"), Math.round(housing * amount / 100), "Housing");
+  addAreaExpense($("#stateExpenses"), Math.round(transportation * amount / 100), "Transportation");
+  addAreaExpense($("#stateExpenses"), Math.round(healthcare * amount / 100), "Healthcare");
+  addAreaExpense($("#stateExpenses"), Math.round(entertainment * amount / 100), "Entertainment");
+  addAreaExpense($("#stateExpenses"), Math.round(misc * amount / 100), "Misc");
+}
+
 function populateTable() {
   const food = 12.87;
   const housing = 33.12;
@@ -216,6 +255,7 @@ function parseState() {
   if (stateNumber === undefined) { stateNumber = "11"; } //Use Georgia if not found in lookup table.
   fetchStateMedianIncome();
 }
+
 function userEntry(e) {
   e.preventDefault();
   submitUserToDataBase();
@@ -224,7 +264,6 @@ function userEntry(e) {
   const estimate = getFedTaxes(income);
   $("#budget").text(`Budget: $${income}`)
   $("#fedTaxEstimate").text(`Estimated fed income tax: $${estimate}`);
-
 }
 
 //document ready functions
@@ -237,7 +276,7 @@ $(function () {
     addChildToTable(childSnapshot);
   });
 
-
+  populateFedExpenses();
   M.updateTextFields();
   $('.modal').modal();
   fetchTaxeeData();
