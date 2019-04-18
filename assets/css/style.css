@@ -34,16 +34,25 @@ body {
     text-align: left !important;
 }
 
+.input-field {
+    color: #52361b;
+}
+
+#selectstate {
+    left: -.10rem !important;
+    font-size: 15px;
+}
+
+#name, #income {
+    font-size: 15px;
+}
+
 .slidercontainer {
     height: 2px;
 }
 
-    output {
-        display: inline;
-    }
-.loginsignup {
-    margin: 5px;
-    margin-top: 50px;
+output {
+   display: inline;
 }
 
 .modalmargin {
@@ -79,6 +88,10 @@ output {
 i {
   font-size: 16px; 
   margin-top: 5px; 
+}
+
+.income {
+    padding-top: 15px !important;
 }
 
 h4 {

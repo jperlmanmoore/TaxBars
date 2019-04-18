@@ -20,14 +20,14 @@ function writeUserData(user) {
 let income = 0;
 function submitUserToDataBase() {
   // *** get rid of any dollar sign or any other special character -- or put static text -JM
-  //const firstName  = $("#first_name").val().trim();
+  
   let tmp = $("#first_name").val().trim();
   let user = {};
   if (tmp != "") {
     user.firstName = tmp;
   }
 
-  tmp = $('.dropdown2').formSelect('getSelectedValues');
+  tmp = $("#state").val(); //$('.dropdown2').formSelect('getSelectedValues');
 
   if (tmp != "") {
     user.state = tmp;
@@ -241,11 +241,11 @@ $(function () {
   M.updateTextFields();
   $('.modal').modal();
   fetchTaxeeData();
-  // fetchGeorgiaMedianIncome();
+  fetchGeorgiaMedianIncome();
   $('.dropdown-trigger').dropdown({
     hover: true
   });
-  
+  $('input#income').characterCounter();
   $('select').formSelect();
-  $('.collapsible').collapsible();
+  // $('.collapsible').collapsible();
 }); //end document

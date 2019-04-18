@@ -29,5 +29,11 @@
 //         }
 //     });
 
-//     $("#form").validate();
+    
 // });
+
+// $("#form").validate();
+
+// conflicts with CSS so need to do some steps to disable Materalie in order to be able to use this.
+
+// https://medium.com/@dmunozc/ruby-on-rails-how-to-use-jquery-validation-on-materialize-d556450b8809
