@@ -181,7 +181,6 @@ function sliderChange(domElement) {
 
 // }
 
-}
 
 //create user table 
 function addChildToTable(snapshot) {
