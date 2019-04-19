@@ -169,10 +169,18 @@ function fetchStateMedianIncome() {
 
 ////////// Dom manipulation //////////
 function sliderChange(domElement) {
-  debugger;
+  // debugger;
   const val = domElement.value;
   const cat = domElement.getAttribute("data-cat");
   $(`#sliderOutput${cat}`).text(`${cat}: $${val}`);
+}
+
+// function budgetCalculator (domElement) {
+//   console.log($('.slider')
+//   for (var=i; i<$('.slider').length;i++)}
+
+// }
+
 }
 
 //create user table 
@@ -195,10 +203,11 @@ function addSlider(value, category) {
         name="weight" oninput="sliderChange(this)">
       <output id="sliderOutput${category}">${category}: $${value}</output>
   `);
+  const sliderValue = value;
 }
 
 function addAreaExpense(parentDom, amount, cat) {
-  parentDom.append(`<tr><td class="text">${cat}</td><td class="text">${amount}</td></tr>`);
+  parentDom.append(`<tr><td class="text">${cat}</td><td class="text">$${amount}</td></tr>`);
 }
 
 function populateFedExpenses() {
@@ -231,6 +240,8 @@ function populateStateExpenses(amount) {
   addAreaExpense($("#stateExpenses"), Math.round(healthcare * amount / 100), "Healthcare");
   addAreaExpense($("#stateExpenses"), Math.round(entertainment * amount / 100), "Entertainment");
   addAreaExpense($("#stateExpenses"), Math.round(misc * amount / 100), "Misc");
+
+
 }
 
 function populateTable() {
@@ -241,6 +252,7 @@ function populateTable() {
   const entertainment = 4.4;
   const misc = 38.4;
 
+  $("#sliderArea").empty();
   addSlider(Math.round(food * income / 100), "Food");
   addSlider(Math.round(housing * income / 100), "Housing");
   addSlider(Math.round(transportation * income / 100), "Transportation");
@@ -262,74 +274,75 @@ function userEntry(e) {
   populateTable();
   parseState();
   const estimate = getFedTaxes(income);
-  $("#budget").text(`Budget: $${income}`)
-  $("#fedTaxEstimate").text(`Estimated fed income tax: $${estimate}`);
+  $("#budget").text(`Income: $${income}`)
+  $("#fedTaxEstimate").text(`Estimated fed income tax: $${estimate}`)
+  $("#remainingBudget").text(`Budget: $${income - estimate}`);
 }
 
-//create dropdown options for state field
+// //create dropdown options for state field
 
-const stateArray = [
-  "AL",
-  "AK",
-  "AZ",
-  "AR",
-  "CA",
-  "CO",
-  "CT",
-  "DE",
-  "DC",
-  "FL",
-  "GA",
-  "HI",
-  "ID",
-  "IL",
-  "IN",
-  "IA",
-  "KS",
-  "KY",
-  "LA",
-  "ME",
-  "MD",
-  "MA",
-  "MI",
-  "MN",
-  "MS",
-  "MO",
-  "MT",
-  "NE",
-  "NV",
-  "NH",
-  "NJ",
-  "NM",
-  "NY",
-  "NC",
-  "ND",
-  "OH",
-  "OK",
-  "OR",
-  "PA",
-  "RI",
-  "SC",
-  "SD",
-  "TN",
-  "TX",
-  "UT",
-  "VT",
-  "VA",
-  "WA",
-  "WV",
-  "WI",
-  "WY"]
+// const stateArray = [
+//   "AL",
+//   "AK",
+//   "AZ",
+//   "AR",
+//   "CA",
+//   "CO",
+//   "CT",
+//   "DE",
+//   "DC",
+//   "FL",
+//   "GA",
+//   "HI",
+//   "ID",
+//   "IL",
+//   "IN",
+//   "IA",
+//   "KS",
+//   "KY",
+//   "LA",
+//   "ME",
+//   "MD",
+//   "MA",
+//   "MI",
+//   "MN",
+//   "MS",
+//   "MO",
+//   "MT",
+//   "NE",
+//   "NV",
+//   "NH",
+//   "NJ",
+//   "NM",
+//   "NY",
+//   "NC",
+//   "ND",
+//   "OH",
+//   "OK",
+//   "OR",
+//   "PA",
+//   "RI",
+//   "SC",
+//   "SD",
+//   "TN",
+//   "TX",
+//   "UT",
+//   "VT",
+//   "VA",
+//   "WA",
+//   "WV",
+//   "WI",
+//   "WY"]
 
-var select = document.getElementById("state");
-var options = stateArray;
-for (var i = 0; i < options.length; i++) {
-  var opt = options[i];
-  var el = document.createElement("option");
-  el.textContent = opt;
-  el.value = opt;
-  select.appendChild(el);
-}
+// var select = document.getElementById("state");
+// var options = stateArray;
+// for (var i = 0; i < options.length; i++) {
+//   var opt = options[i];
+//   var el = document.createElement("option");
+//   el.textContent = opt;
+//   el.value = opt;
+//   select.appendChild(el);
+// }
 
 
 //valdation first letter uppercase on modal input
