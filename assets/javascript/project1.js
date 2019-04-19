@@ -19,8 +19,7 @@ function saveData() {
 let haveData = false;
 function loadData() {
   const data = JSON.parse(localStorage.getItem("data"));
-  debugger;
-  if(data != null) {
+   if(data != null) {
     haveData = true;
     firstName = data.name;
     state = data.state;
@@ -103,7 +102,6 @@ let taxeeFedData;
 let taxeeBracketCount; // Only need to get this once.
 function getFedTaxes(income, filingType = "single") {
   let taxesOwed = 0;
-  debugger;
   const stdDeduction = taxeeFedData[filingType].deductions[0].deduction_amount;
   const evaluatedIncome = income - stdDeduction;
   if ((taxeeFedData != undefined) && evaluatedIncome > 0) {
@@ -258,7 +256,10 @@ function addSlider(value, category) {
 }
 
 function addAreaExpense(parentDom, amount, cat) {
+  parentDom.append(`<tr><td class="text">${cat}</td><td class="text">$${amount}</td></tr>`);
 }
+
+function populateFedExpenses() {
   const amount = 57652;
   const food = 12.87;
   const housing = 33.12;
