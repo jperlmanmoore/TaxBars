@@ -1,3 +1,44 @@
+////////// Local Storage //////////
+// We still save the following data if you've been here before.
+// Name, State, Income
+// Locaitons of the bars at the time of a save click.
+function saveData() {
+  const data = {
+    name: firstName,
+    state: state,
+    income: income,
+    food: $('.slider[data-cat="Food"]').val(),
+    housing: $('.slider[data-cat="Housing"]').val(),
+    transportation: $('.slider[data-cat="Transportation"]').val(),
+    healthcare: $('.slider[data-cat="Healthcare"]').val(),
+    entertainment: $('.slider[data-cat="Entertainment"]').val(),
+    misc: $('.slider[data-cat="Misc"]').val()
+  }
+  localStorage.setItem("data", JSON.stringify(data));
+}
+let haveData = false;
+function loadData() {
+  const data = JSON.parse(localStorage.getItem("data"));
+  debugger;
+  if(data != null) {
+    haveData = true;
+    firstName = data.name;
+    state = data.state;
+    income = data.income;
+    populateTable();
+    parseState();
+    $("#budget").text(`Budget: $${income}`)
+    $('.slider[data-cat="Food"]').val(data.food);
+    $('.slider[data-cat="Housing"]').val(data.housing),
+    $('.slider[data-cat="Transportation"]').val(data.transportation),
+    $('.slider[data-cat="Healthcare"]').val(data.healthcare),
+    $('.slider[data-cat="Entertainment"]').val(data.entertainment),
+    $('.slider[data-cat="Misc"]').val(data.misc)
+  } else {
+    $('#modal1').modal('open');
+  }
+}
+
 ////////// DataBase //////////
 const config = {
   apiKey: "AIzaSyA_OTRPTqH6qlBHv6DgxXyZZROR5TYIQoc",
@@ -17,7 +58,9 @@ function writeUserData(user) {
   ); //end write user data
 }
 
+let firstName = "bob";
 let income = 0;
+let state = "GA";
 function submitUserToDataBase() {
   // *** get rid of any dollar sign or any other special character -- or put static text -JM
   
@@ -25,12 +68,14 @@ function submitUserToDataBase() {
   let user = {};
   if (tmp != "") {
     user.firstName = tmp;
+    firstName = tmp;
   }
 
   tmp = $("#state").val(); //$('.dropdown2').formSelect('getSelectedValues');
 
   if (tmp != "") {
     user.state = tmp;
+    state = tmp;
   }
 
   tmp = $("#income").val().trim();
@@ -58,6 +103,7 @@ let taxeeFedData;
 let taxeeBracketCount; // Only need to get this once.
 function getFedTaxes(income, filingType = "single") {
   let taxesOwed = 0;
+  debugger;
   const stdDeduction = taxeeFedData[filingType].deductions[0].deduction_amount;
   const evaluatedIncome = income - stdDeduction;
   if ((taxeeFedData != undefined) && evaluatedIncome > 0) {
@@ -84,6 +130,10 @@ function fetchTaxeeData() {
     }, success: function (data) {
       taxeeFedData = data;
       taxeeBracketCount = data.single.income_tax_brackets.length; //All filing types have the same number of brackets so grabbing for single is ok for now.
+      if(haveData) {
+        const estimate = getFedTaxes(income);
+        $("#fedTaxEstimate").text(`Estimated fed income tax: $${estimate}`);
+      }
     }
   });
 }
@@ -160,7 +210,6 @@ function fetchStateMedianIncome() {
     url: queryURL,
     method: "GET"
   }).then(function (data) {
-    debugger;
     stateMedianSingleIncome = data[1][0];
     $("#stateMedianIncome").text("$" + stateMedianSingleIncome);
     populateStateExpenses(stateMedianSingleIncome);
@@ -168,8 +217,11 @@ function fetchStateMedianIncome() {
 }
 
 ////////// Dom manipulation //////////
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 function sliderChange(domElement) {
-  debugger;
   const val = domElement.value;
   const cat = domElement.getAttribute("data-cat");
   $(`#sliderOutput${cat}`).text(`${cat}: $${val}`);
@@ -198,7 +250,7 @@ function addSlider(value, category) {
 }
 
 function addAreaExpense(parentDom, amount, cat) {
-  parentDom.append(`<tr><td class="text">${cat}</td><td class="text">${amount}</td></tr>`);
+  parentDom.append(`<tr><td class="text">${cat}</td><td class="text">$${numberWithCommas(amount)}</td></tr>`);
 }
 
 function populateFedExpenses() {
@@ -252,7 +304,7 @@ function populateTable() {
 function parseState() {
   const userEntry = $("#state").val().trim().toUpperCase();
   stateNumber = stateCodeLookup.get(userEntry);
-  if (stateNumber === undefined) { stateNumber = "11"; } //Use Georgia if not found in lookup table.
+  if (stateNumber === undefined) { state = "GA"; stateNumber = "11"; } //Use Georgia if not found in lookup table.
   fetchStateMedianIncome();
 }
 
@@ -351,7 +403,7 @@ for (var i = 0; i < options.length; i++) {
 //document ready functions
 $(function () {
   $("#submit").on("click", userEntry);
-
+  
   //Event listener for the child added event in the database 'users' scope
   database.ref('users').on("child_added", function (childSnapshot, prevChildKey) {
     //console.log(childSnapshot.val());
@@ -368,4 +420,7 @@ $(function () {
   // });
   $('input#income').characterCounter();
   $('select').formSelect();
+  $("#saveBtn").on("click", saveData);
+
+  loadData();
 }); //end document
