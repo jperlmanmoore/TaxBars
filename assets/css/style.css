@@ -98,3 +98,10 @@ a {
     margin-left: -10px;
     margin-top: 40px;
 }
+
+input[type=range] {
+    border: none;}
+
+input[type=range]::-webkit-slider-runnable-track {
+    background: #696969
+}

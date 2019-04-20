@@ -19,20 +19,20 @@ function saveData() {
 let haveData = false;
 function loadData() {
   const data = JSON.parse(localStorage.getItem("data"));
-   if(data != null) {
+  if (data != null) {
     haveData = true;
     firstName = data.name;
     state = data.state;
     income = data.income;
     populateTable();
     parseState();
-    $("#budget").text(`Budget: $${income}`)
+    $("#budget").text(`Income: $${income}`)
     $('.slider[data-cat="Food"]').val(data.food);
     $('.slider[data-cat="Housing"]').val(data.housing),
-    $('.slider[data-cat="Transportation"]').val(data.transportation),
-    $('.slider[data-cat="Healthcare"]').val(data.healthcare),
-    $('.slider[data-cat="Entertainment"]').val(data.entertainment),
-    $('.slider[data-cat="Misc"]').val(data.misc)
+      $('.slider[data-cat="Transportation"]').val(data.transportation),
+      $('.slider[data-cat="Healthcare"]').val(data.healthcare),
+      $('.slider[data-cat="Entertainment"]').val(data.entertainment),
+      $('.slider[data-cat="Misc"]').val(data.misc)
   } else {
     $('#modal1').modal('open');
   }
@@ -56,13 +56,14 @@ function writeUserData(user) {
     user
   ); //end write user data
 }
-
+let estimate = '';
 let firstName = "bob";
 let income = 0;
+let estimateSliderChange = 0;
 let state = "GA";
 function submitUserToDataBase() {
   // *** get rid of any dollar sign or any other special character -- or put static text -JM
-  
+
   let tmp = $("#first_name").val().trim();
   let user = {};
   if (tmp != "") {
@@ -87,7 +88,7 @@ function submitUserToDataBase() {
   writeUserData(user);
 
   $("input").val("");
-  
+
 }
 
 ////////// APIs //////////
@@ -128,9 +129,11 @@ function fetchTaxeeData() {
     }, success: function (data) {
       taxeeFedData = data;
       taxeeBracketCount = data.single.income_tax_brackets.length; //All filing types have the same number of brackets so grabbing for single is ok for now.
-      if(haveData) {
-        const estimate = getFedTaxes(income);
+      if (haveData) {
+        estimate = getFedTaxes(income);
         $("#fedTaxEstimate").text(`Estimated fed income tax: $${estimate}`);
+
+
       }
     }
   });
@@ -223,6 +226,8 @@ function sliderChange(domElement) {
   const val = domElement.value;
   const cat = domElement.getAttribute("data-cat");
   $(`#sliderOutput${cat}`).text(`${cat}: $${val}`);
+  // console.log(val)
+  $("#remainingBudget").text(`Budget: $${income - estimate - val}`);
 }
 
 // function budgetCalculator (domElement) {
@@ -252,7 +257,11 @@ function addSlider(value, category) {
         name="weight" oninput="sliderChange(this)">
       <output id="sliderOutput${category}">${category}: $${value}</output>
   `);
+
   const sliderValue = value;
+  //console.log(sliderValue)
+
+
 }
 
 function addAreaExpense(parentDom, amount, cat) {
@@ -300,13 +309,19 @@ function populateTable() {
   const entertainment = 4.4;
   const misc = 38.4;
 
-  $("#sliderArea").empty();
-  addSlider(Math.round(food * income / 100), "Food");
-  addSlider(Math.round(housing * income / 100), "Housing");
-  addSlider(Math.round(transportation * income / 100), "Transportation");
-  addSlider(Math.round(healthcare * income / 100), "Healthcare");
-  addSlider(Math.round(entertainment * income / 100), "Entertainment");
-  addSlider(Math.round(misc * income / 100), "Misc");
+  // console.log(estimate)
+
+
+
+
+
+  $("#sliderArea").empty();  // changed
+  addSlider(Math.round(food * (income - estimate) / 100), "Food");
+  addSlider(Math.round(housing * (income - estimate) / 100), "Housing");
+  addSlider(Math.round(transportation * (income - estimate) / 100), "Transportation");
+  addSlider(Math.round(healthcare * (income - estimate) / 100), "Healthcare");
+  addSlider(Math.round(entertainment * (income - estimate) / 100), "Entertainment");
+  addSlider(Math.round(misc * (income - estimate) / 100), "Misc");
 }
 
 function parseState() {
@@ -319,13 +334,16 @@ function parseState() {
 function userEntry(e) {
   e.preventDefault();
   submitUserToDataBase();
-  populateTable();
   parseState();
-  const estimate = getFedTaxes(income);
+  estimate = getFedTaxes(income);
+  estimate = Math.round(estimate);
+  populateTable();
   $("#budget").text(`Income: $${income}`)
   $("#fedTaxEstimate").text(`Estimated fed income tax: $${estimate}`)
   $("#remainingBudget").text(`Budget: $${income - estimate}`);
+  //console.log(estimate)
 }
+
 
 // //create dropdown options for state field
 
@@ -412,7 +430,7 @@ function userEntry(e) {
 //document ready functions
 $(function () {
   $("#submit").on("click", userEntry);
-  
+
   //Event listener for the child added event in the database 'users' scope
   database.ref('users').on("child_added", function (childSnapshot, prevChildKey) {
     //console.log(childSnapshot.val());
