@@ -34,7 +34,7 @@ function loadData() {
       $('.slider[data-cat="Entertainment"]').val(data.entertainment),
       $('.slider[data-cat="Misc"]').val(data.misc)
   } else {
-    $('#modal1').modal('open');
+    // $('#modal1').modal('open');
   }
 }
 
