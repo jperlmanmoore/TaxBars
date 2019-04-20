@@ -240,7 +240,7 @@ function sliderChange(domElement) {
 //create user table 
 function addChildToTable(snapshot) {
   // $("#table1").append(snapshot.val().firstName + " | " + snapshot.val().income + " | " + snapshot.val().state);
-  $("#table1").append('<tr>' + '<td>' + snapshot.val().firstName + '</td>' + '<td>' + snapshot.val().state + '</td>' + '<td>' + snapshot.val().income + '</td>' + '<td>' + getFedTaxes(snapshot.val().income) + '</td>' + '</tr>');
+  $("#table1").append('<tr>' + '<td>' + snapshot.val().firstName + '</td>' + '<td>' + snapshot.val().state + '</td>' + '<td>$' + snapshot.val().income + '</td>' + '<td>$' + getFedTaxes(snapshot.val().income) + '</td>' + '</tr>');
 } // end addChildToTable
 
 //source = https://wallethacks.com/average-household-spending-budget/
